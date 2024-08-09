@@ -21,7 +21,7 @@ repository               : "x-repos/x-repos.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile.JPG"
   name             : "Hoang Anh (Benjamin) Nguyen"
   pronouns         : # example: "he/him"  
   bio              : "Physicist, Geophysist & Computer Scientist"
