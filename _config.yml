@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Hoang Anh Nguyen / Portfolio"
+title                    : "Home Page"
 title_separator          : "-"
 name                     : &name "Hoang Anh Nguyen"
 description              : &description "personal description"
@@ -24,8 +24,8 @@ author:
   avatar           : "profile.png"
   name             : "Hoang Anh Nguyen"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Golden, CO, USA"
+  bio              : "Physicist, Geophysist & Computer Scientist"
+  location         : "CO, USA"
   employer         : "Colorado School of Mines"
   uri              : # URL
   email            : "hoanganh_nguyen@mines.edu" 
@@ -57,7 +57,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : "https://www.linkedin.com/in/sipkaro/"
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
