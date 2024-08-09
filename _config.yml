@@ -10,7 +10,7 @@
 locale                   : "en-US"
 title                    : "Home Page"
 title_separator          : "-"
-name                     : &name "Hoang Anh Nguyen"
+name                     : &name "Hoang Anh (Benjamin) Nguyen"
 description              : &description "personal description"
 url                      : https://x-repos.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
