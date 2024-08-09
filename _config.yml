@@ -22,8 +22,8 @@ repository               : "x-repos/x-repos.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Hoang Anh Nguyen"
-  pronouns         : # example: "she/her"  
+  name             : "Hoang Anh (Benjamin) Nguyen"
+  pronouns         : # example: "he/him"  
   bio              : "Physicist, Geophysist & Computer Scientist"
   location         : "CO, USA"
   employer         : "Colorado School of Mines"
