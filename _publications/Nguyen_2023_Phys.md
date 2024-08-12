@@ -6,6 +6,6 @@ excerpt: 'The structural change of MgSiO<sub>3</sub> liquid under compression is
 date: 2023-03-30
 venue: 'Physica Scripta'
 citationurl: '/files/Nguyen_2023_Phys.bib'
-paperurl: 'files/Nguyen_2023_Phys.pdf'
+paperurl: '/files/Nguyen_2023_Phys.pdf'
 ---
 

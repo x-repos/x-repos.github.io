@@ -68,27 +68,58 @@
       <p>Download <a href="{{ post.slidesurl }}">Download Slides</a></p></p>
     {% endif %} -->
 
-    
-    {% if post.paperurl and post.slidesurl %}
+
+    <!-- {% if post.paperurl and post.slidesurl %}
     <p>
       <a href="{{ base_path }}{{ post.paperurl }}" target="_blank">
-        <img src="{{ base_path }}/files/pdf-logo.png" alt="PDF" style="width:16px;height:16px;margin-right:4px;" />
+        <img src="{{ base_path }}/files/pdf-logo.png" alt="PDF" style="width:32px;height:32px;margin-right:4px;" />
         PDF
-      </a> | <a href="{{ post.slidesurl }}" target="_blank">Download Slides</a>
+      </a> | <a href="{{ post.slidesurl }}">Download Slides</a>
     </p>
   {% elsif post.paperurl %}
     <p>
       <a href="{{ base_path }}{{ post.paperurl }}" target="_blank">
-        <img src="{{ base_path }}/files/pdf-logo.png" alt="PDF" style="width:16px;height:16px;margin-right:4px;" />
+        <img src="{{ base_path }}/files/pdf-logo.png" alt="PDF" style="width:32px;height:32px;margin-right:4px;" />
         PDF
       </a>
     </p>
   {% elsif post.slidesurl %}
     <p>
-      <a href="{{ post.slidesurl }}" target="_blank">Download Slides</a>
+      <a href="{{ post.slidesurl }}">Download Slides</a>
     </p>
   {% endif %}
-  
+  I have this, but I want the logo also in a click, for example, your is not on 
+   -->
+   {% if post.paperurl and post.citationurl %}
+   <p>
+     <a href="{{ base_path }}{{ post.paperurl }}" target="_blank">
+       <img src="{{ base_path }}/files/pdf-logo.png" alt="PDF" style="width:32px;height:32px;margin-right:4px;" />
+       PDF
+     </a> | 
+     <a href="{{ base_path }}{{ post.citationurl }}" target="_blank">
+       <img src="{{ base_path }}/files/BibTeX_logo.png" alt="BibTeX" style="width:99px;height:32px;margin-right:4px;" />
+       Export Citation
+     </a>
+   </p>
+ {% elsif post.paperurl %}
+   <p>
+     <a href="{{ base_path }}{{ post.paperurl }}" target="_blank">
+       <img src="{{ base_path }}/files/pdf-logo.png" alt="PDF" style="width:32px;height:32px;margin-right:4px;" />
+       PDF
+     </a>
+   </p>
+ {% elsif post.citationurl %}
+   <p>
+     <a href="{{ base_path }}{{ post.citationurl }}" target="_blank">
+       <img src="{{ base_path }}/files/BibTeX_logo.png" alt="BibTeX" style="width:32px;height:32px;margin-right:4px;" />
+       Export Citation
+     </a>
+   </p>
+ {% endif %}
+ 
+
+
+
 
   </article>
 </div>
