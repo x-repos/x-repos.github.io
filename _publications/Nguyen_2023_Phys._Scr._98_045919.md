@@ -1,12 +1,11 @@
 ---
-title: "Topology of SiO<sub>x</sub>-units and glassy network of magnesium silicate glass under densification: correlation between radial distribution function and bond angle distribution"
+title: "Study of the structure of MgSiO<sub>3</sub> system under compression by using ring statistics and voronoi analysis"
 collection: publications
-link: https://iopscience.iop.org/article/10.1088/1361-651X/ab9bb4/meta
-excerpt: '<p>Topology of SiO<sub>x</sub> units and glassy network of magnesium silicate glass at different pressures are investigated by molecular dynamics simulation to clarify its microstructure under compression. Results show that SiO<sub>x</sub>-topology and glassy network structure are significantly dependent on pressure. At ambient pressure, the –Si–O– glassy network in Mg<sub>2</sub>SiO<sub>4</sub> glass is split into subnets/clusters. Under compression, the small subnets tend to merge each other forming larger ones. The decrease of Si–O–Si bond angle under compression that accompanies a formation of edge- and face-sharing bonds between SiO<sub>x</sub> units results in the first peak splitting of Si–Si PRDF at high pressure. In particular, the investigation also reveals a tight correlation between PRDFs (Si–Si, Mg–Mg, Si–Mg, O–O) and BADs (Si–O–Si, Mg–O–Mg, Mg–O–Si, O–T–O (T = Si, Mg)), respectively. The spatial distribution of corner-, edge- and face-sharing bonds is not uniform but forming subnets/clusters. The clusters of face-sharing bonds form rigid particles embedding into mixture clusters of corner- and edge-sharing bonds. Size distribution of subnets/clusters (SiO<sub>x</sub>-cluster as well as clusters of corner-, edge- and face-sharing bonds) under compression also has been investigated to clarify the intermediate range order. The characteristic change of PRDFs under compression in the relationship with microstructural change and the mechanism of magnesium ions incorporation into –Si–O– network is also discussed in detail.</p>
-'
-date: 2020-07-15
-venue: 'Modelling and Simulation in Materials Science and Engineering'
-slidesurl: 'http://academicpages.github.io/files/slides2.pdf'
-paperurl: 'http://academicpages.github.io/files/paper2.pdf'
-citation: 'Your Name, You. (2010). &quot;Paper Title Number 2.&quot; <i>Journal 1</i>. 1(2).'
+link: https://iopscience.iop.org/article/10.1088/1402-4896/acc5b7
+excerpt: 'The structural change of MgSiO<sub>3</sub> liquid under compression is still one of the most interesting challenges. In this paper, we perform molecular dynamics simulations to study the structural change of MgSiO<sub>3</sub> liquid from 0 to 200 GPa. Ring statistics are analyzed to clarify the intermediate-range order, to explain why the second peak of Si–Si PRDFs splits into two subpeaks at 200 GPa, and to show the heterogeneity of MgSiO<sub>3</sub>. Large rings, which form at high pressures, capture the oxygen atoms. Oxygen atoms, which have a negative charge, attract Mg²⁺ ions, creating magnesium-rich regions. Additionally, the Voronoi and Q<sub>n</sub> distribution changes on the ring with pressure are clarified to provide more information about the rings.'
+date: 2023-03-30
+venue: 'Physica Scripta'
+citationurl: 'http://academicpages.github.io/files/Nguyen_2023_Phys._Scr._98_045919.pdf'
+paperurl: 'http://academicpages.github.io/files/papers/Nguyen_2023_Phys._Scr._98_045919.pdf'
 ---
+
