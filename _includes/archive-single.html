@@ -34,9 +34,15 @@
       {% endif %}
     </h2> -->
 
+
     <h2 class="archive__item-title" itemprop="headline">
-      <a href="https://iopscience.iop.org/article/10.1088/1402-4896/acc5b7" target="_blank">{{ title }}</a>
+      {% if post.permalink %}
+        <a href="{{ post.permalink }}" target="_blank">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
+      {% else %}
+        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
+      {% endif %}
     </h2>
+    
     
     
     {% if post.read_time %}
@@ -70,6 +76,26 @@
     {% elsif post.slidesurl %}
       <p>Download <a href="{{ post.slidesurl }}">Download Slides</a></p></p>
     {% endif %}
+
+
+    <!-- {% if post.citation and post.paperurl and post.slidesurl %}
+      <p>Recommended citation: {{ post.citation }}<br />
+      <a href="{{ post.paperurl }}"><img src="path/to/pdf-logo.png" alt="PDF" style="width:16px;height:16px;margin-right:4px;" />PDF</a> | 
+      <a href="{{ post.slidesurl }}">Download Slides</a></p>
+    {% elsif post.citation and post.paperurl %}
+      <p>Recommended citation: {{ post.citation }}<br />
+      <a href="{{ post.paperurl }}"><img src="path/to/pdf-logo.png" alt="PDF" style="width:16px;height:16px;margin-right:4px;" />PDF</a></p>
+    {% elsif post.citation and post.slidesurl %}
+      <p>Recommended citation: {{ post.citation }}<br />
+      <a href="{{ post.slidesurl }}">Download Slides</a></p>
+    {% elsif post.citation %}
+      <p>Recommended citation: {{ post.citation }}</p>
+    {% elsif post.paperurl %}
+      <p><a href="{{ post.paperurl }}"><img src="path/to/pdf-logo.png" alt="PDF" style="width:16px;height:16px;margin-right:4px;" />PDF</a></p>
+    {% elsif post.slidesurl %}
+      <p>Download <a href="{{ post.slidesurl }}">Download Slides</a></p></p>
+    {% endif %} -->
+
 
   </article>
 </div>
