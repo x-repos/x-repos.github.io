@@ -71,14 +71,14 @@
 
     {% if post.paperurl and post.slidesurl %}
     <p>
-      <a href="{{ post.paperurl }}" target="_blank">
+      <a href="{{ base_path }}{{ post.paperurl }}" target="_blank">
         <img src="{{ base_path }}/files/pdf-logo.png" alt="PDF" style="width:16px;height:16px;margin-right:4px;" />
         PDF
       </a> | <a href="{{ post.slidesurl }}">Download Slides</a>
     </p>
   {% elsif post.paperurl %}
     <p>
-      <a href="{{ post.paperurl }}" target="_blank">
+      <a href="{{ base_path }}{{ post.paperurl }}" target="_blank">
         <img src="{{ base_path }}/files/pdf-logo.png" alt="PDF" style="width:16px;height:16px;margin-right:4px;" />
         PDF
       </a>
