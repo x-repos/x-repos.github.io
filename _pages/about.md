@@ -36,11 +36,10 @@ The image depicts a pore structure characterized by a cluster of red spheres and
 On the right, the blue shape represents the overall morphology of the pore, highlighting its irregular, interconnected nature. This blue contour provides a visualization of the pore's boundary, enclosing the red spheres and indicating the extent and complexity of the pore's shape.
 
 This combined visualization of the red spheres and blue contour allows for a comprehensive understanding of both the internal distribution of void spaces and the overall pore structure within the material.
-<div style="overflow: auto;">
+
 ![sio2crystallization](/images/sio2crystallization.png){: .align-center width="400px"}
 Crystallization of materials under high compression, particularly up to pressures as extreme as 100 GPa, is a topic of significant interest in the study of geophysics and material science. When subjected to such intense pressures, materials like SiO<sub>2</sub> (silicon dioxide) undergo profound structural changes. At ambient conditions, SiO<sub>2</sub> typically exists in the crystalline form of quartz, but as pressure increases, it transitions through several high-pressure polymorphs such as coesite and stishovite. These transformations involve the rearrangement of the silicon and oxygen atoms into denser configurations, which are more stable under high pressure. The study of these phase transitions is crucial for understanding the behavior of Earth’s mantle, where pressures can reach such extremes, and provides insight into the processes that govern the formation of planetary interiors.
 At pressures approaching 100 GPa, SiO<sub>2</sub> may crystallize into even more complex structures, such as those similar to seifertite or other high-pressure phases that are not commonly found at the Earth's surface. These high-pressure forms of SiO<sub>2</sub> have different physical properties, including density and elastic moduli, which can significantly influence the mechanical behavior of materials in the deep Earth. Understanding the crystallization process under such conditions requires advanced experimental techniques, such as diamond anvil cells, as well as computational simulations to model atomic interactions at these extreme environments. Research in this area not only helps in reconstructing the conditions of Earth's deep interior but also contributes to the development of materials that can withstand extreme pressures for technological applications.
-</div>
 
 ## Earth System Physics
 
