@@ -35,22 +35,22 @@ author:
   arxiv            : # URL - Update with the correct link to your profile
   googlescholar    : "https://scholar.google.com/citations?user=7AcRW1kAAAAJ&hl=en&authuser=1"
   impactstory      : # URL
-  orcid            : "http://orcid.org/0000-0002-7504-5284"
+  orcid            : #"http://orcid.org/0000-0002-7504-5284"
   semantic         : # URL
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  researchgate     : "https://www.researchgate.net/profile/Hoang-Anh-Nguyen-21"
+  researchgate     : #"https://www.researchgate.net/profile/Hoang-Anh-Nguyen-21"
 
   # Repositories and software development
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : "x-repos"
+  github           : # "x-repos"
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
   # Social media
   bluesky          : #"bsky.app" # Replace this with you Bluesky username
-  facebook         : "sipkaro"
+  facebook         : #"sipkaro"
   flickr           : # Username
   foursquare       : # Username
   goodreads        : # Username
