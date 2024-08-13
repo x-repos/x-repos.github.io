@@ -1,6 +1,6 @@
 ---
 title: 'My Journey: From Vietnam to the Stars'
-date: 2014-02-14
+date: 2024-02-14
 link: https://www.vietnam.vn/en/chang-trai-viet-tot-nghiep-2-bang-thac-si-muc-tieu-vao-nasa-lam-viec/?fbclid=IwY2xjawEobstleHRuA2FlbQIxMAABHfAWsrsQYgz0S7GO5TVG7yHF7QTjkPVcWNKy6XxMaPmTSVMzwHS8m3NJHQ_aem_mlU_fWNS6UmFUUT-yYPSRA
 tags:
   - NASA
