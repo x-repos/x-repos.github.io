@@ -7,7 +7,18 @@ redirect_from:
   - /about.html
 ---
 
-This is the front page of a website 
-A data-driven personal website
-======
-Like many other Jekyll-based GitHub Pages templates
+![Illustration of combining vision and language modalities](/images/bandaarc.png){: .align-right width="300px"}
+
+I am currently working on:
+- Exploration Geophysics
+- Earth System Physics
+- Molecular Dynamics Simulation
+
+
+## Exploration Geophysics
+![Quantum Computing](/images/result10loops.png)
+## Earth System Physics
+
+## Molecular Dynamic Simulation
+
+
