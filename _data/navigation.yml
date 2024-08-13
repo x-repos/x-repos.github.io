@@ -17,6 +17,7 @@ main:
     
   - title: "CV"
     url: /files/HoangAnh_CV.pdf
+    target: "_blank"
     
   # - title: "Guide"
   #   url: /markdown/
