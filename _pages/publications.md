@@ -5,9 +5,10 @@ permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
+**{% if site.author.googlescholar %}
+
   <div class="wordwrap"><a href="{{site.author.googlescholar}}">Google Scholar profile</a>.</div>
-{% endif %}
+{% endif %}**
 
 {% include base_path %}
 
