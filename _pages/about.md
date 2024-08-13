@@ -29,7 +29,7 @@ In seismic inversion, the goal is to create models of the Earth's subsurface tha
 
 The integration of quantum computing into seismic inversion is still in its early stages, with ongoing research and development needed to fully realize its potential. Challenges such as developing suitable quantum algorithms and dealing with noise and error correction in quantum systems remain. However, as quantum technology continues to advance, it is expected to bring transformative changes to seismic inversion, enabling geophysicists to solve more complex problems, achieve higher-resolution subsurface images, and make more accurate predictions in fields such as oil and gas exploration, earthquake hazard assessment, and environmental monitoring.
 
-## Molecular Dynamic Simulation
+## Molecular Dynamics Simulation
 ![pore](/images/atoms.png){: .align-center width="400px"}
 The image depicts a pore structure characterized by a cluster of red spheres and a surrounding blue shape. The red spheres represent the individual particles or void spaces within the pore, calculated using the DBSCAN (Density-Based Spatial Clustering of Applications with Noise) method. This clustering algorithm identifies and groups points (in this case, the voids) that are closely packed, allowing for the identification of the pore structure within the material.
 
