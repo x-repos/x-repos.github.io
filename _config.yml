@@ -24,9 +24,9 @@ author:
   # Biographic information
   avatar           : "profile.JPG"
   name             : "Hoang Anh (Benjamin) Nguyen"
-  pronouns         : "He/Him"  
-  bio              : "Physicist | Geophysist | Computer Scientist"
-  location         : "CO, USA"
+  pronouns         : # "He/Him"  
+  bio              : "Physical Scientist"
+  location         : # "CO, USA"
   employer         : "Colorado School of Mines"
   uri              : # URL
   email            : "hoanganh_nguyen@mines.edu" 
@@ -38,7 +38,7 @@ author:
   orcid            : #"http://orcid.org/0000-0002-7504-5284"
   semantic         : # URL
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  researchgate     : #"https://www.researchgate.net/profile/Hoang-Anh-Nguyen-21"
+  researchgate     : "https://www.researchgate.net/profile/Hoang-Anh-Nguyen-21"
 
   # Benjamin
   # Repositories and software development
@@ -51,7 +51,7 @@ author:
 
   # Social media
   bluesky          : #"bsky.app" # Replace this with you Bluesky username
-  facebook         : #"sipkaro"
+  facebook         : # "sipkaro"
   flickr           : # Username
   foursquare       : # Username
   goodreads        : # Username
