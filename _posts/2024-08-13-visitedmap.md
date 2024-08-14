@@ -1,7 +1,7 @@
 ---
 title: 'Tracing My Footsteps: A Journey Through the Countries'
 date: 2024-08-13
-link: https://www.vietnam.vn/en/chang-trai-viet-tot-nghiep-2-bang-thac-si-muc-tieu-vao-nasa-lam-viec/?fbclid=IwY2xjawEobstleHRuA2FlbQIxMAABHfAWsrsQYgz0S7GO5TVG7yHF7QTjkPVcWNKy6XxMaPmTSVMzwHS8m3NJHQ_aem_mlU_fWNS6UmFUUT-yYPSRA
+link: https://x-repos.github.io/visitedmap/
 tags:
   - World
   - Traveling
