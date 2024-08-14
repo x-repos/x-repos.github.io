@@ -19,6 +19,8 @@ I am currently working on:
 ![Earth](/images/earth.jpg){: .align-center}
 
 <div style="clear: both;"></div>
+<p style="text-align: center;"><em>Image credit: Shutterstock.</em></p>
+
 
 ## Exploration Geophysics
 
