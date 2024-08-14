@@ -17,12 +17,7 @@ After finishing my studies in Vietnam, I moved to Italy, where I spent two incre
 The Next Chapter: Life in the United States
 ------
 
-Today, I find myself in the United States, a country of vast landscapes and endless opportunities. Moving from Italy to the U.S. was a significant change, but one that has allowed me to grow both personally and professionally. Here, I’ve explored iconic cities like New York and San Francisco, each with its own unique vibe. The diversity and dynamism of the U.S. continue to inspire me every day as I work towards my dreams and goals.
-
-Looking Back and Moving Forward
-------
-
-As I reflect on my journey, I realize how each country I’ve lived in has left a mark on who I am today. Vietnam, Italy, and now the United States have each shaped my worldview in different ways. But this journey is far from over. There are still so many places to explore, people to meet, and cultures to experience. The world is vast, and I am eager to continue discovering it.
+Today, I find myself in the United States, a country of vast landscapes and endless opportunities. Moving from Italy to the U.S. was a significant change, but one that has allowed me to grow both personally and professionally. Here, I’ve explored iconic cities like New York and San Francisco, each with its own unique vibe. The diversity and dynamism of the U.S. continue to inspire me every day as I work towards my dreams and goals. As I reflect on my journey, I realize how each country I’ve lived in has left a mark on who I am today. Vietnam, Italy, and now the United States have each shaped my worldview in different ways. But this journey is far from over. There are still so many places to explore, people to meet, and cultures to experience. The world is vast, and I am eager to continue discovering it.
 
 Maps
 ------
