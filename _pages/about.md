@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-![banda](/images/inver.png){: .align-right width="400px"}
+![banda](/images/inver.png){: .align-right width="300px"}
 
 I am currently working on:
 - 🗺️ Exploration Geophysics
