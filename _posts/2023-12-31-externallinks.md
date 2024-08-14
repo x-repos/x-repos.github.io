@@ -1,5 +1,5 @@
 ---
-title: 'Know more about me'
+title: 'Get to Know Me Better'
 date: 2023-12-31
 link: https://sipkaro.github.io/externallinks/
 tags:
