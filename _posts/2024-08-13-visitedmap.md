@@ -1,7 +1,7 @@
 ---
 title: 'Tracing My Footsteps: A Journey Through the Countries'
 date: 2024-08-13
-link: https://x-repos.github.io/visitedmap/
+link: https://sipkaro.github.io/visitedmap/
 tags:
   - World
   - Traveling
