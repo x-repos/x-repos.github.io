@@ -22,3 +22,87 @@ Maps
   </div>
   Map by <a href="https://www.fla-shop.com/visited-countries/">Fla-shop.com</a>
 </div>
+
+
+### Mapsx
+<!-- VisitedPlaces.com code -->
+<script>
+// VisitedPlaces.com code
+var visitedplaces_config = {
+  "map": "world",
+  "projection": "geoOrthographic",
+  "theme": "dark-green",
+  "water": 1,
+  "graticule": 1,
+  "names": 1,
+  "duration": 2000,
+  "slider": 0,
+  "autoplay": 1,
+  "autozoom": "none",
+  "data": [
+    {
+      "colors": {},
+      "places": [],
+      "text": "My Home",
+      "position": {
+        "zoomLevel": 1,
+        "geoPoint": {
+          "longitude": 0,
+          "latitude": 0
+        },
+        "rotationX": 103.5,
+        "rotationY": -44.7
+      }
+    },
+    {
+      "colors": {},
+      "places": [
+        "IT",
+        "GR",
+        "DE",
+        "CY",
+        "PL",
+        "HU",
+        "FR",
+        "AT",
+        "ES",
+        "SI",
+        "CH"
+      ],
+      "text": "Europe",
+      "position": {
+        "zoomLevel": 2.4,
+        "geoPoint": {
+          "longitude": 12.1,
+          "latitude": 53.3
+        },
+        "rotationX": -12.1,
+        "rotationY": -53.3
+      }
+    },
+    {
+      "colors": {},
+      "places": [
+        "VN",
+        "SG",
+        "TH"
+      ],
+      "text": "Asia",
+      "position": {
+        "zoomLevel": 1.5,
+        "geoPoint": {
+          "longitude": 83.8,
+          "latitude": 33.3
+        },
+        "rotationX": -83.8,
+        "rotationY": -33.3
+      }
+    }
+  ],
+  "home": "US"
+};
+</script>
+<div id="chartdiv" style="width: 100%; height: 600px;">
+<script src="https://www.visitedplaces.com/js/common.js"></script>
+<script src="https://www.visitedplaces.com/js/viewer.js"></script>
+<!-- end: VisitedPlaces.com code -->
