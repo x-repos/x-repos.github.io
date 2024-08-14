@@ -61,7 +61,7 @@ Ambient noise tomography (ANT) is an innovative geophysical technique that lever
 ![seismicwave](/images/seismicwave.png){: .align-center width="400px"}
 <div style="clear: both;"></div>
 The process of ANT involves cross-correlating the recorded signals from pairs of seismic stations. Through this technique, the Green's function, which represents the seismic wave's impulse response between two stations, is extracted. Essentially, this gives a picture of how seismic waves would propagate through the Earth's crust and upper mantle as if an earthquake had occurred at one station. These extracted signals are then used in tomographic inversion, a process that constructs a detailed velocity model of the subsurface. The resulting images can reveal various geological structures, such as fault zones, sedimentary basins, and volcanic features, providing insights into the region's geological and tectonic framework.
-![bandainver](/images/inver.png){: .align-right width="400px"}
+![bandainver](/images/inver.png){: .align-center width="400px"}
 <div style="clear: both;"></div>
 ![shear](/images/shear.png){: .align-center width="400px"}
 
