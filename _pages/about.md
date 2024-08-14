@@ -16,9 +16,13 @@ I am currently working on:
 
 
 
-## Exploration Geophysics
-![Quantum Computing](/images/result10loops.png){: .align-center width="600"}
+![Earth](/images/earth.jpg){: .align-center}
+
 <div style="clear: both;"></div>
+
+## Exploration Geophysics
+
+
 
 The seismic inversion with quantum computer system. Here I employ the computation via the open-access D-Wave Advantage system quantum annealer.
 
@@ -26,6 +30,7 @@ The seismic inversion with quantum computer system. Here I employ the computatio
 Quantum computing holds significant promise for revolutionizing seismic inversion, a key technique in geophysics used to infer subsurface properties from seismic data. Traditional seismic inversion methods involve solving large, complex optimization problems, which require processing vast amounts of data and running computationally intensive simulations. These tasks are often time-consuming and require significant computational resources. Quantum computing, with its ability to process and analyze information at unprecedented speeds, offers a potential breakthrough in tackling these challenges more efficiently, enabling faster and more accurate seismic inversion.
 
 In seismic inversion, the goal is to create models of the Earth's subsurface that best fit the observed seismic data. This typically involves iteratively adjusting the model parameters and running forward simulations to minimize the difference between the observed and synthetic data. Quantum computing could accelerate this process by exploiting quantum parallelism, which allows simultaneous exploration of multiple solutions in a much shorter time frame than classical computers. Quantum algorithms, such as quantum annealing and quantum machine learning, could significantly enhance the efficiency of searching for the optimal subsurface model, reducing the computational time from days or weeks to potentially hours or even minutes.
+![Quantum Computing](/images/result10loops.png){: .align-center width="600"}
 
 The integration of quantum computing into seismic inversion is still in its early stages, with ongoing research and development needed to fully realize its potential. Challenges such as developing suitable quantum algorithms and dealing with noise and error correction in quantum systems remain. However, as quantum technology continues to advance, it is expected to bring transformative changes to seismic inversion, enabling geophysicists to solve more complex problems, achieve higher-resolution subsurface images, and make more accurate predictions in fields such as oil and gas exploration, earthquake hazard assessment, and environmental monitoring.
 
