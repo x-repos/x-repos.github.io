@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-![banda](/images/inver.png){: .align-right width="300px"}
+
 
 I am currently working on:
 - 🗺️ Exploration Geophysics
@@ -30,6 +30,8 @@ The seismic inversion with quantum computer system. Here I employ the computatio
 
 
 Quantum computing holds significant promise for revolutionizing seismic inversion, a key technique in geophysics used to infer subsurface properties from seismic data. Traditional seismic inversion methods involve solving large, complex optimization problems, which require processing vast amounts of data and running computationally intensive simulations. These tasks are often time-consuming and require significant computational resources. Quantum computing, with its ability to process and analyze information at unprecedented speeds, offers a potential breakthrough in tackling these challenges more efficiently, enabling faster and more accurate seismic inversion.
+![google](/images/google.jpg){: .align-center width="300px"}
+
 
 In seismic inversion, the goal is to create models of the Earth's subsurface that best fit the observed seismic data. This typically involves iteratively adjusting the model parameters and running forward simulations to minimize the difference between the observed and synthetic data. Quantum computing could accelerate this process by exploiting quantum parallelism, which allows simultaneous exploration of multiple solutions in a much shorter time frame than classical computers. Quantum algorithms, such as quantum annealing and quantum machine learning, could significantly enhance the efficiency of searching for the optimal subsurface model, reducing the computational time from days or weeks to potentially hours or even minutes.
 ![Quantum Computing](/images/result10loops.png){: .align-center width="600"}
@@ -44,7 +46,7 @@ On the right, the blue shape represents the overall morphology of the pore, high
 
 This combined visualization of the red spheres and blue contour allows for a comprehensive understanding of both the internal distribution of void spaces and the overall pore structure within the material.
 
-![sio2crystallization](/images/sio2crystallization.png){: .align-center width="400px"}
+![sio2crystallization](/images/sio2crystallization.png){: .align-center width="300px"}
 Crystallization of materials under high compression, particularly up to pressures as extreme as 100 GPa, is a topic of significant interest in the study of geophysics and material science. When subjected to such intense pressures, materials like SiO<sub>2</sub> (silicon dioxide) undergo profound structural changes. At ambient conditions, SiO<sub>2</sub> typically exists in the crystalline form of quartz, but as pressure increases, it transitions through several high-pressure polymorphs such as coesite and stishovite. These transformations involve the rearrangement of the silicon and oxygen atoms into denser configurations, which are more stable under high pressure. The study of these phase transitions is crucial for understanding the behavior of Earth’s mantle, where pressures can reach such extremes, and provides insight into the processes that govern the formation of planetary interiors.
 At pressures approaching 100 GPa, SiO<sub>2</sub> may crystallize into even more complex structures, such as those similar to seifertite or other high-pressure phases that are not commonly found at the Earth's surface. These high-pressure forms of SiO<sub>2</sub> have different physical properties, including density and elastic moduli, which can significantly influence the mechanical behavior of materials in the deep Earth. Understanding the crystallization process under such conditions requires advanced experimental techniques, such as diamond anvil cells, as well as computational simulations to model atomic interactions at these extreme environments. Research in this area not only helps in reconstructing the conditions of Earth's deep interior but also contributes to the development of materials that can withstand extreme pressures for technological applications.
 
@@ -58,6 +60,7 @@ Ambient noise tomography (ANT) is an innovative geophysical technique that lever
 ![seismicwave](/images/seismicwave.png){: .align-center width="400px"}
 <div style="clear: both;"></div>
 The process of ANT involves cross-correlating the recorded signals from pairs of seismic stations. Through this technique, the Green's function, which represents the seismic wave's impulse response between two stations, is extracted. Essentially, this gives a picture of how seismic waves would propagate through the Earth's crust and upper mantle as if an earthquake had occurred at one station. These extracted signals are then used in tomographic inversion, a process that constructs a detailed velocity model of the subsurface. The resulting images can reveal various geological structures, such as fault zones, sedimentary basins, and volcanic features, providing insights into the region's geological and tectonic framework.
+![bandainver](/images/inver.png){: .align-right width="400px"}
 <div style="clear: both;"></div>
 ![shear](/images/shear.png){: .align-center width="400px"}
 
