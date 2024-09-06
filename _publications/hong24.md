@@ -6,6 +6,6 @@ excerpt: 'In this study, we employ molecular dynamics simulations to develop a l
 date: 2024-08-02
 venue: 'Pramana - Journal of Physics'
 # citationurl: '/files/son20vnu.bib'
-# paperurl: '/files/son20vnu.pdf'
+paperurl: '/files/HongPaper.pdf'
 ---
 
