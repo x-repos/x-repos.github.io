@@ -1,7 +1,7 @@
 ---
 title: 'Get to Know Me Better'
 date: 2023-12-31
-link: https://sipkaro.github.io/externallinks/
+link: https://x-repos.github.io/externallinks/
 tags:
   - HUST
   - Olympics
