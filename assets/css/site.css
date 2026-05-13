@@ -180,6 +180,9 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 720px) {
   .site-nav { padding: 12px 16px; }
 
+  /* Hamburger sits at the far-right on mobile */
+  .site-nav .nav-toggle { margin-left: auto; }
+
   .site-nav__primary {
     order: 3;
     width: 100%;

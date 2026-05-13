@@ -185,7 +185,9 @@ html.home-immersive a { color: var(--home-accent); }
 @media (max-width: 720px) {
   .home-topnav { padding: 10px 16px; }
 
-  /* Hide name next to π already covered by .brand-name { display: none } */
+  /* Hamburger sits at the far-right on mobile (primary collapses below
+     so margin-left:auto on primary no longer pushes the toggle over) */
+  .home-topnav .nav-toggle { margin-left: auto; }
 
   /* Collapse the inline primary links into the dropdown stack */
   .home-topnav__primary {
