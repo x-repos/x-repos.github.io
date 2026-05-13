@@ -1,7 +1,7 @@
 ---
 permalink: /
 layout: home
-title: "Hoang Anh (Benjamin) Nguyen — Quantum, Atoms, Planets"
+title: "Hoang Anh (Benjamin) Nguyen — Quantum, HPC, AI, Planets"
 ---
 
 <!-- =====================================================
@@ -17,17 +17,38 @@ title: "Hoang Anh (Benjamin) Nguyen — Quantum, Atoms, Planets"
 </section>
 
 <!-- =====================================================
-     Scene 2 — DFT / electron orbitals
+     Scene 2 — Quantum computing (same qubit visual as hero)
+     ===================================================== -->
+<section class="home-scene home-scene--quantum" id="scene-quantum" data-scene="quantum">
+  <div class="home-scene__inner">
+    <p class="home-scene__eyebrow">Quantum computing · annealing · gate-based · hybrid</p>
+    <h2 class="home-scene__title">Inverting seismic waves<br>with qubits.</h2>
+    <p class="home-scene__body">
+      <strong>Full-waveform inversion</strong> is a high-dimensional, non-convex
+      optimization — exactly the kind of problem people want to throw at a
+      <strong>quantum computer</strong>. I work across three flavors:
+      <strong>annealing</strong> on the D-Wave Advantage (reformulating subproblems as QUBO),
+      <strong>gate-based</strong> quantum hardware (variational algorithms on
+      IBM-style devices), and <strong>hybrid quantum–classical</strong> methods
+      that hand specific kernels to the quantum solver while the rest stays on
+      classical <strong>HPC</strong>.
+    </p>
+  </div>
+</section>
+
+<!-- =====================================================
+     Scene 3 — DFT / electron orbitals
      ===================================================== -->
 <section class="home-scene home-scene--dft" id="scene-dft" data-scene="dft">
   <div class="home-scene__inner">
     <p class="home-scene__eyebrow">~10<sup>−10</sup> m · Density functional theory</p>
-    <h2 class="home-scene__title">Electron clouds, by the rules of Kohn–Sham.</h2>
+    <h2 class="home-scene__title">Electron clouds.</h2>
     <p class="home-scene__body">
       Before atoms have positions they have <strong>orbitals</strong> — solutions to a many-body
-      problem we don't solve exactly, but approximate beautifully with <strong>DFT</strong>. The
-      same machinery gives me energies, forces, elastic moduli, equations of state — all the
-      ingredients I feed into bigger simulations.
+      problem we don't solve exactly, but approximate beautifully with <strong>DFT</strong>,
+      running on national <strong>HPC</strong> clusters. The same machinery gives me energies,
+      forces, elastic moduli, equations of state — all the ingredients I feed into bigger
+      simulations.
     </p>
   </div>
 </section>
@@ -40,10 +61,12 @@ title: "Hoang Anh (Benjamin) Nguyen — Quantum, Atoms, Planets"
     <p class="home-scene__eyebrow">~10<sup>−9</sup> m · Molecular dynamics</p>
     <h2 class="home-scene__title">Atoms find their neighbours.</h2>
     <p class="home-scene__body">
-      Drop ten thousand atoms in a box, give them forces, integrate Newton at one femtosecond a
-      step. Squeeze. <strong>SiO<sub>2</sub></strong> rearranges; silicon grows from four bonds
-      to six; pores collapse irreversibly. I track this with ring statistics, Voronoi cells, and
-      DBSCAN clustering.
+      Drop ten thousand atoms in a box, give them forces, integrate Newton at one femtosecond
+      a step. Squeeze. <strong>SiO<sub>2</sub></strong> rearranges; silicon grows from four
+      bonds to six; pores collapse irreversibly. I run these on <strong>HPC</strong> and pull
+      structure out with ring statistics, Voronoi cells, DBSCAN clustering — and increasingly
+      with <strong>deep learning</strong> models that learn the order parameters the
+      hand-crafted descriptors miss.
     </p>
   </div>
 </section>
@@ -72,10 +95,10 @@ title: "Hoang Anh (Benjamin) Nguyen — Quantum, Atoms, Planets"
     <p class="home-scene__eyebrow">~10<sup>7</sup> m · Earth & planetary science</p>
     <h2 class="home-scene__title">And out comes the planet.</h2>
     <p class="home-scene__body">
-      I image Earth's interior with <strong>ambient-noise tomography</strong>, invert it with
-      <strong>full-waveform inversion</strong>, and benchmark parts of that inversion on a
-      <strong>D-Wave Advantage</strong> quantum annealer. Same problem, four scales — qubit to
-      continent.
+      I image Earth's interior with <strong>ambient-noise tomography</strong> and invert it
+      with <strong>full-waveform inversion</strong> — the same inversion problem we threw at the
+      quantum annealer at the top of this page, just from the planetary side instead of the
+      qubit side.
     </p>
   </div>
 </section>
@@ -119,10 +142,14 @@ title: "Hoang Anh (Benjamin) Nguyen — Quantum, Atoms, Planets"
     <p class="home-scene__eyebrow">About · Colorado School of Mines</p>
     <h2 class="home-scene__title">One scientist, many length scales.</h2>
     <p class="home-scene__body">
-      I'm a PhD researcher working at the intersection of <strong>quantum computing</strong>,
-      <strong>molecular dynamics</strong>, <strong>density functional theory</strong>, and
-      <strong>Earth &amp; planetary science</strong>. If any of this overlaps with your work,
-      I'd love to hear from you.
+      I'm a PhD researcher working at the intersection of
+      <strong>quantum computing</strong> (annealing, gate-based, hybrid),
+      <strong>density functional theory</strong>,
+      <strong>molecular dynamics</strong>,
+      <strong>HPC</strong>,
+      <strong>deep learning</strong>, and
+      <strong>Earth &amp; planetary science</strong>.
+      If any of this overlaps with your work, I'd love to hear from you.
     </p>
 
     <div class="home-outro__grid">

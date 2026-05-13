@@ -5,7 +5,7 @@
 # Basic
 locale       : "en-US"
 title        : "Hoang Anh (Benjamin) Nguyen"
-description  : "Computational physics of planetary materials — quantum computing, molecular dynamics, DFT, Earth & planetary science."
+description  : "Computational physics of planetary materials — quantum computing (annealing, gate-based, hybrid), DFT, molecular dynamics, HPC, deep learning, and Earth & planetary science."
 url          : "https://x-repos.github.io"
 baseurl      : ""
 repository   : "x-repos/x-repos.github.io"

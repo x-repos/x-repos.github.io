@@ -602,57 +602,60 @@
   // changes are anchored slightly before the opacity shift so the move
   // begins while the previous scene is still partly visible.
 
-  // Scene 1 (Qubits): hold at full intensity, gentle camera drift
-  tl.to(state, { quantumRot: 0.2, cameraZ: 6.5, duration: 1.0, ease: "power1.inOut" }, 0);
+  // Scene 1 (Hero, qubits) + Scene 2 (Quantum computing prose, same qubits visual):
+  // hold qubits at full intensity for ~2 timeline units, gentle camera drift.
+  tl.to(state, { quantumRot: 0.3, cameraZ: 6.5, duration: 2.0, ease: "sine.inOut" }, 0);
 
-  // Scene 1 -> 2: fade qubits, bring DFT cloud + nucleus
-  tl.to(state, { quantumOpacity: 0.0, quantumActivity: 0.0, duration: 0.9, ease: "sine.inOut" }, 0.9)
-    .to(state, { dftOpacity: 1.0, duration: 0.9, ease: "sine.inOut" }, 0.9)
-    .to(state, { dftShape: 1.0, dftRot: 0.8, duration: 1.4, ease: "sine.inOut" }, 1.0);
+  // Scene 2 -> 3: fade qubits, bring DFT cloud + nucleus
+  tl.to(state, { quantumOpacity: 0.0, quantumActivity: 0.0, duration: 0.9, ease: "sine.inOut" }, 1.9)
+    .to(state, { dftOpacity: 1.0, duration: 0.9, ease: "sine.inOut" }, 1.9)
+    .to(state, { dftShape: 1.0, dftRot: 0.8, duration: 1.4, ease: "sine.inOut" }, 2.0);
 
-  // Scene 2 -> 3: fade DFT, atoms appear scattered then bond
-  tl.to(state, { dftOpacity: 0.0, duration: 0.9, ease: "sine.inOut" }, 2.1)
-    .to(state, { atomsOpacity: 1.0, duration: 0.9, ease: "sine.inOut" }, 2.1)
-    .to(state, { cameraZ: 5.4, duration: 1.1, ease: "power1.inOut" }, 2.0)
-    .to(state, { atomsCompactness: 1.0, atomsRot: 0.6, duration: 1.4, ease: "power2.inOut" }, 2.3);
+  // Scene 3 -> 4: fade DFT, atoms appear scattered then bond
+  tl.to(state, { dftOpacity: 0.0, duration: 0.9, ease: "sine.inOut" }, 3.1)
+    .to(state, { atomsOpacity: 1.0, duration: 0.9, ease: "sine.inOut" }, 3.1)
+    .to(state, { cameraZ: 5.4, duration: 1.1, ease: "power1.inOut" }, 3.0)
+    .to(state, { atomsCompactness: 1.0, atomsRot: 0.6, duration: 1.4, ease: "power2.inOut" }, 3.3);
 
-  // Scene 3 -> 4: atoms fade, mantle plumes rise (heat building)
-  tl.to(state, { atomsOpacity: 0.0, duration: 0.9, ease: "sine.inOut" }, 3.3)
-    .to(state, { mantleOpacity: 1.0, duration: 0.9, ease: "sine.inOut" }, 3.3)
-    .to(state, { cameraZ: 6.5, duration: 1.2, ease: "power1.inOut" }, 3.2);
+  // Scene 4 -> 5: atoms fade, mantle plumes rise (heat building)
+  tl.to(state, { atomsOpacity: 0.0, duration: 0.9, ease: "sine.inOut" }, 4.3)
+    .to(state, { mantleOpacity: 1.0, duration: 0.9, ease: "sine.inOut" }, 4.3)
+    .to(state, { cameraZ: 6.5, duration: 1.2, ease: "power1.inOut" }, 4.2);
 
-  // Scene 4 -> 5: fade mantle, Earth emerges large + hot, then cools and shrinks
-  tl.to(state, { mantleOpacity: 0.0, duration: 0.9, ease: "sine.inOut" }, 4.3)
-    .to(state, { earthOpacity: 1.0, duration: 0.9, ease: "sine.inOut" }, 4.3)
-    .to(state, { earthScale: 1.2, heat: 0.0, duration: 1.4, ease: "power2.inOut" }, 4.4)
-    .to(state, { wavePhase: 1.0, duration: 0.9, ease: "power2.in" }, 4.9);
+  // Scene 5 -> 6: fade mantle, Earth emerges large + hot, then cools and shrinks
+  tl.to(state, { mantleOpacity: 0.0, duration: 0.9, ease: "sine.inOut" }, 5.3)
+    .to(state, { earthOpacity: 1.0, duration: 0.9, ease: "sine.inOut" }, 5.3)
+    .to(state, { earthScale: 1.2, heat: 0.0, duration: 1.4, ease: "power2.inOut" }, 5.4)
+    .to(state, { wavePhase: 1.0, duration: 0.9, ease: "power2.in" }, 5.9);
 
-  // Scene 5 -> 6 (Solar): Earth shrinks to a tiny dot, solar system fades in
-  tl.to(state, { earthOpacity: 0.0, earthScale: 0.0, duration: 0.9, ease: "sine.inOut" }, 5.5)
-    .to(state, { solarOpacity: 1.0, duration: 0.9, ease: "sine.inOut" }, 5.5)
-    .to(state, { cameraZ: 8.0, duration: 1.2, ease: "power1.inOut" }, 5.4);
+  // Scene 6 -> 7 (Solar): Earth shrinks to a tiny dot, solar system fades in
+  tl.to(state, { earthOpacity: 0.0, earthScale: 0.0, duration: 0.9, ease: "sine.inOut" }, 6.5)
+    .to(state, { solarOpacity: 1.0, duration: 0.9, ease: "sine.inOut" }, 6.5)
+    .to(state, { cameraZ: 8.0, duration: 1.2, ease: "power1.inOut" }, 6.4);
 
-  // Scene 6 -> 7 (Galaxy): solar shrinks to a glowing core, galaxy reveals
-  tl.to(state, { solarOpacity: 0.0, solarScale: 0.05, duration: 0.9, ease: "sine.inOut" }, 6.5)
-    .to(state, { galaxyOpacity: 1.0, duration: 0.9, ease: "sine.inOut" }, 6.5)
-    .to(state, { cameraZ: 9.5, duration: 1.2, ease: "power1.inOut" }, 6.4);
+  // Scene 7 -> 8 (Galaxy): solar shrinks to a glowing core, galaxy reveals
+  tl.to(state, { solarOpacity: 0.0, solarScale: 0.05, duration: 0.9, ease: "sine.inOut" }, 7.5)
+    .to(state, { galaxyOpacity: 1.0, duration: 0.9, ease: "sine.inOut" }, 7.5)
+    .to(state, { cameraZ: 9.5, duration: 1.2, ease: "power1.inOut" }, 7.4);
 
-  // Scene 7 -> 8 (Outro): galaxy recedes, stars dominate
-  tl.to(state, { galaxyScale: 0.45, duration: 1.4, ease: "power2.inOut" }, 7.5)
-    .to(state, { starOpacity: 1.0, starRotation: 0.1, duration: 1.4, ease: "power2.out" }, 7.5);
+  // Scene 8 -> 9 (Outro): galaxy recedes, stars dominate
+  tl.to(state, { galaxyScale: 0.45, duration: 1.4, ease: "power2.inOut" }, 8.5)
+    .to(state, { starOpacity: 1.0, starRotation: 0.1, duration: 1.4, ease: "power2.out" }, 8.5);
 
   // Always-on: progress bar + scale ruler
   const progressBar = document.querySelector(".home-progress__bar");
   const scaleDot   = document.getElementById("home-scale-dot");
   const scaleLabel = document.getElementById("home-scale-label");
   // (scroll-progress band → label, dot color). Order matches narrative.
+  // Nine scenes: hero, quantum, dft, md, mantle, planet, solar, galaxy, outro.
+  // Bands split scroll progress proportionally (each ~1/9 ≈ 0.111).
   const SCALE_BANDS = [
-    { until: 0.125, label: "10⁻¹⁵ m", color: "#b48bff", caption: "qubit" },
-    { until: 0.250, label: "10⁻¹⁰ m", color: "#9aa6ff", caption: "orbital" },
-    { until: 0.375, label: "10⁻⁹ m",  color: "#6cc7ff", caption: "atomic" },
-    { until: 0.500, label: "10⁵ m",   color: "#ffb066", caption: "mantle" },
-    { until: 0.625, label: "10⁷ m",   color: "#4dd28a", caption: "planet" },
-    { until: 0.800, label: "10¹¹ m",  color: "#ffd27a", caption: "solar" },
+    { until: 0.222, label: "10⁻¹⁵ m", color: "#b48bff", caption: "qubit" },     // hero + quantum
+    { until: 0.333, label: "10⁻¹⁰ m", color: "#9aa6ff", caption: "orbital" },
+    { until: 0.444, label: "10⁻⁹ m",  color: "#6cc7ff", caption: "atomic" },
+    { until: 0.555, label: "10⁵ m",   color: "#ffb066", caption: "mantle" },
+    { until: 0.666, label: "10⁷ m",   color: "#4dd28a", caption: "planet" },
+    { until: 0.777, label: "10¹¹ m",  color: "#ffd27a", caption: "solar" },
     { until: 1.010, label: "10²¹ m",  color: "#dde3ff", caption: "galaxy" },
   ];
   ScrollTrigger.create({
