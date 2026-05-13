@@ -463,8 +463,11 @@ html.home-immersive a { color: var(--home-accent); }
   background: var(--home-accent);
   box-shadow: 0 0 18px var(--home-accent);
   transform: translateY(-50%);
-  transition: top 0.15s linear, background 0.3s ease, box-shadow 0.3s ease;
+  /* No transition on top — let it update at scroll-tick frame rate so
+     it stays exactly in sync with the trail. */
+  transition: background 0.3s ease, box-shadow 0.3s ease;
   top: 0%;
+  z-index: 10;
 }
 .home-scale__label {
   font-variant-numeric: tabular-nums;

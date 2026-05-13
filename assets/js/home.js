@@ -664,14 +664,15 @@
     end: "bottom bottom",
     onUpdate: (self) => {
       state.progress = self.progress;
-      if (progressBar) progressBar.style.width = (self.progress * 100).toFixed(2) + "%";
-      if (scaleDot) scaleDot.style.top = (self.progress * 100).toFixed(2) + "%";
+      const pct = self.progress * 100;
+      if (progressBar) progressBar.style.width = pct.toFixed(2) + "%";
+      if (scaleDot)   scaleDot.style.top       = pct.toFixed(2) + "%";
       if (scaleLabel) {
         const band = SCALE_BANDS.find(b => self.progress < b.until) || SCALE_BANDS[SCALE_BANDS.length - 1];
         if (scaleLabel.textContent !== band.label) scaleLabel.textContent = band.label;
         if (scaleDot) {
           scaleDot.style.background = band.color;
-          scaleDot.style.boxShadow = `0 0 12px ${band.color}`;
+          scaleDot.style.boxShadow  = `0 0 12px ${band.color}`;
         }
       }
     },
