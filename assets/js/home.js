@@ -11,6 +11,13 @@
     return;
   }
   gsap.registerPlugin(ScrollTrigger);
+  // On mobile, let ScrollTrigger normalize touch scroll. Fixes the
+  // "drag locks for a moment, then suddenly scrolls" pattern that
+  // happens when scrub fights iOS Safari's native momentum.
+  if (window.matchMedia("(max-width: 720px)").matches) {
+    ScrollTrigger.normalizeScroll(true);
+    ScrollTrigger.config({ ignoreMobileResize: true });
+  }
 
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (prefersReduced) {
