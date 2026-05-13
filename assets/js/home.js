@@ -11,15 +11,15 @@
     return;
   }
   gsap.registerPlugin(ScrollTrigger);
-  // On any touch device (portrait OR landscape phone), let ScrollTrigger
-  // normalize touch scroll. Fixes the "drag locks for a moment, then
-  // suddenly scrolls" pattern that happens when scrub fights iOS Safari's
-  // native momentum.
+  // Keep iOS Safari from refreshing ScrollTrigger every time its
+  // address bar collapses — that was also a source of mid-scroll
+  // hitches. (We DON'T enable normalizeScroll because it replaces
+  // native momentum scroll, which feels worse than the occasional
+  // scrub-catchup hitch it would fix.)
   if (
     window.matchMedia("(max-width: 720px)").matches ||
     window.matchMedia("(pointer: coarse) and (hover: none)").matches
   ) {
-    ScrollTrigger.normalizeScroll(true);
     ScrollTrigger.config({ ignoreMobileResize: true });
   }
 
