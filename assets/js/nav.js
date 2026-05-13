@@ -65,6 +65,20 @@
 })();
 
 /* ============================================================
+   Hero portrait flip — click the avatar to spin to the alt image.
+   ============================================================ */
+(function () {
+  document.addEventListener("DOMContentLoaded", function () {
+    const flip = document.querySelector(".hero-portrait-flip");
+    if (!flip) return;
+    flip.addEventListener("click", function () {
+      const pressed = flip.getAttribute("aria-pressed") === "true";
+      flip.setAttribute("aria-pressed", pressed ? "false" : "true");
+    });
+  });
+})();
+
+/* ============================================================
    Ben10 reveal — click the "Ben10" word in the hero, watch the
    Omnitrix flash, get the explanation that it's just a nickname.
    ============================================================ */

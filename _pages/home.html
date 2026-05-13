@@ -13,11 +13,22 @@ title: "Hoang Anh (Benjamin) Nguyen — Quantum, HPC, AI, Planets"
       <span lang="en">PhD researcher · Colorado School of Mines</span>
       <span lang="vi">Nghiên cứu sinh Tiến sĩ · Colorado School of Mines</span>
     </p>
-    <img class="hero-portrait"
-         src="{{ '/images/profile.jpeg' | relative_url }}"
-         alt="Hoang Anh (Benjamin) Nguyen"
-         width="160" height="160"
-         loading="eager" decoding="async">
+    <button class="hero-portrait-flip" type="button"
+            aria-label="Flip portrait"
+            aria-pressed="false">
+      <span class="hero-portrait-flip__inner">
+        <img class="hero-portrait hero-portrait--front"
+             src="{{ '/images/profile.jpeg' | relative_url }}"
+             alt="Hoang Anh (Benjamin) Nguyen"
+             width="160" height="160"
+             loading="eager" decoding="async">
+        <img class="hero-portrait hero-portrait--back"
+             src="{{ '/images/profile-glasses.jpeg' | relative_url }}"
+             alt="Hoang Anh (Benjamin) Nguyen — alternate"
+             width="160" height="160"
+             loading="lazy" decoding="async">
+      </span>
+    </button>
     <h1 class="home-scene__title">
       <span class="hero-ben10" role="button" tabindex="0" aria-label="Why Ben? Click to find out">Ben</span>
     </h1>

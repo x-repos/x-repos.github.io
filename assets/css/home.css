@@ -610,45 +610,73 @@ html[lang="vi"] [lang="en"] { display: none !important; }
 }
 .home-outro__contact a { color: var(--home-fg); text-decoration: none; border-bottom: 1px solid var(--home-accent); padding-bottom: 2px; }
 
-/* ---------- Profile portrait above the hero title ---------- */
-.hero-portrait {
+/* ---------- Flip-card portrait above the hero title ---------- */
+.hero-portrait-flip {
   display: block;
   width: 160px;
   height: 160px;
+  margin: 0 auto 22px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  perspective: 1000px;
+  animation: hero-portrait-rise 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.hero-portrait-flip:focus-visible {
+  outline: 2px dashed rgba(143, 214, 255, 0.7);
+  outline-offset: 6px;
+  border-radius: 50%;
+}
+.hero-portrait-flip__inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hero-portrait-flip[aria-pressed="true"] .hero-portrait-flip__inner {
+  transform: rotateY(180deg);
+}
+.hero-portrait {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
-  /* iOS Safari sometimes ignores border-radius on <img>; clip-path
-     forces the circular mask on every browser. */
   -webkit-clip-path: circle(50%);
           clip-path: circle(50%);
   object-fit: cover;
   overflow: hidden;
-  margin: 0 auto 22px;
   border: 2px solid rgba(255, 255, 255, 0.16);
   box-shadow:
     0 0 38px rgba(143, 214, 255, 0.22),
     0 10px 34px rgba(0, 0, 0, 0.55);
   filter: saturate(1.05);
-  /* Force GPU compositing so Safari respects the clip + radius. */
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   transform: translateZ(0);
-  animation: hero-portrait-rise 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.hero-portrait--back {
+  transform: rotateY(180deg) translateZ(0);
 }
 @keyframes hero-portrait-rise {
   0%   { opacity: 0; transform: translate3d(0, 18px, 0) scale(0.92); }
   100% { opacity: 1; transform: translate3d(0, 0, 0)    scale(1); }
 }
 @media (max-width: 720px) {
-  .hero-portrait {
+  .hero-portrait-flip {
     width: 110px;
     height: 110px;
-    border-radius: 50%;
-    -webkit-clip-path: circle(50%);
-            clip-path: circle(50%);
     margin-bottom: 16px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-portrait { animation: none; }
+  .hero-portrait-flip,
+  .hero-portrait-flip__inner { animation: none; transition: none; }
 }
 
 /* ---------- "Ben" word in the hero — bright ↔ doom pulse ---------- */
