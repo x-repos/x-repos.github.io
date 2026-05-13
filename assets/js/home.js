@@ -11,10 +11,14 @@
     return;
   }
   gsap.registerPlugin(ScrollTrigger);
-  // On mobile, let ScrollTrigger normalize touch scroll. Fixes the
-  // "drag locks for a moment, then suddenly scrolls" pattern that
-  // happens when scrub fights iOS Safari's native momentum.
-  if (window.matchMedia("(max-width: 720px)").matches) {
+  // On any touch device (portrait OR landscape phone), let ScrollTrigger
+  // normalize touch scroll. Fixes the "drag locks for a moment, then
+  // suddenly scrolls" pattern that happens when scrub fights iOS Safari's
+  // native momentum.
+  if (
+    window.matchMedia("(max-width: 720px)").matches ||
+    window.matchMedia("(pointer: coarse) and (hover: none)").matches
+  ) {
     ScrollTrigger.normalizeScroll(true);
     ScrollTrigger.config({ ignoreMobileResize: true });
   }
@@ -37,7 +41,11 @@
   });
   // Reduce render load on phones — touch scroll gets blocked when the
   // GPU/CPU can't keep up with the timeline scrub.
-  const _isMobile = window.matchMedia("(max-width: 720px)").matches;
+  // Detect by either narrow width OR touch-only input (so landscape
+  // phones still get the lighter render path).
+  const _isMobile =
+    window.matchMedia("(max-width: 720px)").matches ||
+    window.matchMedia("(pointer: coarse) and (hover: none)").matches;
   renderer.setPixelRatio(_isMobile ? 1 : Math.min(window.devicePixelRatio, 2));
   renderer.setSize(window.innerWidth, window.innerHeight, false);
   renderer.setClearColor(0x000000, 0);
