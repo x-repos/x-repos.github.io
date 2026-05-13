@@ -32,22 +32,38 @@
 (function () {
   let count = 0;
   let resetTimer = null;
+  let navTimer = null;
+  let pendingHref = null;
 
   document.addEventListener("click", function (e) {
     const pi = e.target.closest(".brand-pi");
     if (!pi) return;
 
+    // Always intercept so the click counter survives. We'll navigate
+    // manually after a brief delay if it turns out to be a single click.
+    e.preventDefault();
+    const link = pi.closest("a");
+    if (link) pendingHref = link.href;
+
     count++;
     clearTimeout(resetTimer);
-    resetTimer = setTimeout(function () { count = 0; }, 1500);
-
-    // Prevent same-URL navigation while the user is rapid-clicking
-    if (count >= 2) e.preventDefault();
+    clearTimeout(navTimer);
 
     if (count >= 5) {
       count = 0;
+      pendingHref = null;
       reveal();
+      return;
     }
+
+    // If the user doesn't click again within ~350ms, treat the click
+    // as a normal "go home" click and navigate.
+    navTimer = setTimeout(function () {
+      if (pendingHref) window.location.href = pendingHref;
+    }, 350);
+
+    // Hard reset after 1.5s as a safety net.
+    resetTimer = setTimeout(function () { count = 0; }, 1500);
   });
 
   function reveal() {
