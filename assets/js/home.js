@@ -28,7 +28,10 @@
     alpha: true,
     powerPreference: "high-performance",
   });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  // Reduce render load on phones — touch scroll gets blocked when the
+  // GPU/CPU can't keep up with the timeline scrub.
+  const _isMobile = window.matchMedia("(max-width: 720px)").matches;
+  renderer.setPixelRatio(_isMobile ? 1 : Math.min(window.devicePixelRatio, 2));
   renderer.setSize(window.innerWidth, window.innerHeight, false);
   renderer.setClearColor(0x000000, 0);
 
@@ -56,7 +59,7 @@
   // ====================================================
   const starGroup = new THREE.Group();
   {
-    const STAR_COUNT = 2400;
+    const STAR_COUNT = _isMobile ? 900 : 2400;
     const positions = new Float32Array(STAR_COUNT * 3);
     const sizes = new Float32Array(STAR_COUNT);
     for (let i = 0; i < STAR_COUNT; i++) {
@@ -173,7 +176,10 @@
       }
     `,
   });
-  const earth = new THREE.Mesh(new THREE.SphereGeometry(1.4, 96, 96), earthMat);
+  const earth = new THREE.Mesh(
+    new THREE.SphereGeometry(1.4, _isMobile ? 48 : 96, _isMobile ? 48 : 96),
+    earthMat
+  );
   earthGroup.add(earth);
 
   // Atmosphere glow
@@ -344,7 +350,7 @@
   scene.add(dftGroup);
   dftGroup.visible = false;
 
-  const DFT_N = 1800;
+  const DFT_N = _isMobile ? 700 : 1800;
   const dftBase = new Float32Array(DFT_N * 3); // r, theta, phi (unit-sphere-ish samples)
   const dftPos = new Float32Array(DFT_N * 3);
   const dftCol = new Float32Array(DFT_N * 3);
@@ -453,7 +459,7 @@
   scene.add(galaxyGroup);
   galaxyGroup.visible = false;
 
-  const GAL_N = 7000;
+  const GAL_N = _isMobile ? 2500 : 7000;
   const galPos = new Float32Array(GAL_N * 3);
   const galCol = new Float32Array(GAL_N * 3);
   const galPhase = new Float32Array(GAL_N);
@@ -584,13 +590,12 @@
   // ====================================================
   // On mobile, a high scrub value feels like the page is "sticky" or
   // resisting touch drag — drop it down so finger flicks feel responsive.
-  const isMobile = window.matchMedia("(max-width: 720px)").matches;
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: "#home-main",
       start: "top top",
       end: "bottom bottom",
-      scrub: isMobile ? 0.6 : 1.4,
+      scrub: _isMobile ? 0.6 : 1.4,
     },
   });
 
