@@ -111,6 +111,28 @@ html.home-immersive a { color: var(--home-accent); }
   transition: color 0.2s ease;
 }
 .home-topnav__links a:hover { color: var(--home-fg) !important; }
+
+/* Social icons in the topnav */
+.nav-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding-left: 14px;
+  margin-left: 4px;
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
+}
+.nav-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--home-muted);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.nav-social a:hover {
+  color: var(--home-fg) !important;
+  transform: translateY(-1px);
+}
+.nav-icon { display: block; }
 @media (max-width: 720px) {
   .home-topnav { padding: 10px 16px; flex-direction: column; gap: 8px; align-items: flex-start; }
   .home-topnav__links { gap: 14px; flex-wrap: wrap; font-size: 13px; }
