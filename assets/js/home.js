@@ -610,7 +610,10 @@
       trigger: "#home-main",
       start: "top top",
       end: "bottom bottom",
-      scrub: _isMobile ? 0.6 : 1.4,
+      // Use the same higher scrub on mobile as desktop: more inertia
+      // = smoother glide. The lower 0.6 value felt jittery because
+      // every tiny finger twitch yanked the scenes.
+      scrub: 1.4,
     },
   });
 
