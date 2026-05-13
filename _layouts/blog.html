@@ -22,7 +22,10 @@
 <body class="page-body">
 
   <nav class="site-nav" aria-label="Primary">
-    <a class="site-nav__brand" href="{{ '/' | relative_url }}">{{ site.author.name }}</a>
+    <a class="site-nav__brand" href="{{ '/' | relative_url }}" aria-label="Home — Hoang Anh Nguyen">
+      <span class="brand-pi">π</span>
+      <span class="brand-name">{{ site.author.name }}</span>
+    </a>
     <ul class="site-nav__links">
       <li><a href="{{ '/' | relative_url }}">Home</a></li>
       <li><a href="https://scholar.google.com/citations?user=-f-uRoYAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a></li>

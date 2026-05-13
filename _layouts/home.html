@@ -42,7 +42,10 @@
 
   <!-- Top nav -->
   <nav class="home-topnav" aria-label="Primary">
-    <a class="home-topnav__brand" href="{{ '/' | relative_url }}">{{ site.author.name }}</a>
+    <a class="home-topnav__brand" href="{{ '/' | relative_url }}" aria-label="Home — Hoang Anh Nguyen">
+      <span class="brand-pi">π</span>
+      <span class="brand-name">{{ site.author.name }}</span>
+    </a>
     <ul class="home-topnav__links">
       <li><a href="https://scholar.google.com/citations?user=-f-uRoYAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a></li>
       <li><a href="{{ '/files/HoangAnh_CV.pdf' | relative_url }}" target="_blank" rel="noopener">CV</a></li>
