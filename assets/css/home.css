@@ -527,6 +527,29 @@ html[lang="vi"] [lang="en"] { display: none !important; }
   text-transform: uppercase;
   letter-spacing: 0.18em;
 }
+/* ============================================================
+   Mobile perf overrides — kill the expensive effects that block
+   scroll on phones. backdrop-filter is the worst offender because
+   it forces the GPU to re-blur the WebGL canvas every frame.
+   ============================================================ */
+@media (max-width: 720px) {
+  /* No live blur of the canvas on mobile — use a flat dark scrim. */
+  .home-topnav,
+  .home-topnav__dropdown,
+  .home-scene__inner::before,
+  .home-ask,
+  .home-outro__card {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  /* Slightly stronger dark backdrops so text stays readable without the blur */
+  .home-scene__inner::before { background: rgba(3, 6, 13, 0.72); }
+  .home-topnav { background: rgba(3, 6, 13, 0.95); }
+  .home-topnav__dropdown { background: rgba(3, 6, 13, 0.96); }
+  .home-ask { background: rgba(3, 6, 13, 0.7); }
+  .home-outro__card { background: rgba(3, 6, 13, 0.75); }
+}
+
 /* Compact scale ruler on phones — smaller rail, smaller label */
 @media (max-width: 720px) {
   .home-scale {
