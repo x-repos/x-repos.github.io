@@ -133,9 +133,74 @@ html.home-immersive a { color: var(--home-accent); }
   transform: translateY(-1px);
 }
 .nav-icon { display: block; }
+/* Hamburger button (hidden on desktop) */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+  width: 40px; height: 36px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.nav-toggle:hover { border-color: var(--home-accent); }
+.nav-toggle__bar {
+  display: block;
+  width: 100%; height: 2px;
+  background: var(--home-fg);
+  border-radius: 1px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.home-topnav.is-open .nav-toggle__bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.home-topnav.is-open .nav-toggle__bar:nth-child(2) { opacity: 0; }
+.home-topnav.is-open .nav-toggle__bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 @media (max-width: 720px) {
-  .home-topnav { padding: 10px 16px; flex-direction: column; gap: 8px; align-items: flex-start; }
-  .home-topnav__links { gap: 14px; flex-wrap: wrap; font-size: 13px; }
+  /* Brand on the left, hamburger on the right, links collapse into a dropdown */
+  .home-topnav {
+    padding: 10px 16px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .nav-toggle { display: flex; }
+
+  .home-topnav__links {
+    order: 3;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 12px 4px 6px;
+    font-size: 14px;
+    /* hidden by default — revealed when .is-open */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.2s ease, padding 0.3s ease;
+  }
+  .home-topnav.is-open .home-topnav__links {
+    max-height: 80vh;
+    opacity: 1;
+    padding: 12px 4px 6px;
+  }
+  /* Social icons go inline at the bottom of the dropdown */
+  .nav-social {
+    padding-left: 0;
+    margin-left: 0;
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    padding-top: 12px;
+    margin-top: 4px;
+    width: 100%;
+    gap: 18px;
+  }
 }
 
 /* ---------- Fixed WebGL canvas ---------- */

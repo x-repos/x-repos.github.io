@@ -32,6 +32,11 @@
       <span class="brand-pi">π</span>
       <span class="brand-name">{{ site.author.name }}</span>
     </a>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
     <ul class="site-nav__links">
       <li><a href="{{ '/' | relative_url }}">Home</a></li>
       <li><a href="https://scholar.google.com/citations?user=-f-uRoYAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a></li>
@@ -64,6 +69,8 @@
       </div>
     </article>
   </main>
+
+  <script src="{{ '/assets/js/nav.js' | relative_url }}" defer></script>
 
   <footer class="site-footer">
     <p>© {{ site.time | date: "%Y" }} {{ site.author.name }} · <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>
