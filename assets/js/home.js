@@ -970,4 +970,86 @@
 
     document.addEventListener("site:langchange", render);
   })();
+
+  // ----------------------------------------------------------
+  // Anonymous question form — AJAX submit to FormSubmit.
+  // ----------------------------------------------------------
+  (function () {
+    const form = document.getElementById("home-ask-form");
+    if (!form) return;
+    const status = document.getElementById("home-ask-status");
+    const button = form.querySelector(".home-ask__send");
+
+    // Localize placeholders + status messages on lang change
+    function applyPlaceholders() {
+      const lang = document.documentElement.getAttribute("lang") || "en";
+      const key = "ph" + (lang === "vi" ? "Vi" : "En");
+      form.querySelectorAll("[data-ph-en]").forEach(function (el) {
+        el.placeholder = el.dataset[key] || el.placeholder;
+      });
+    }
+    applyPlaceholders();
+    document.addEventListener("site:langchange", applyPlaceholders);
+
+    function msg(en, vi) {
+      const lang = document.documentElement.getAttribute("lang") || "en";
+      return lang === "vi" ? vi : en;
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!status) return;
+
+      // Honeypot — silently drop bot submissions
+      const honey = form.querySelector(".home-ask__honey");
+      if (honey && honey.value) return;
+
+      status.hidden = false;
+      status.className = "home-ask__status";
+      status.textContent = msg("Sending…", "Đang gửi…");
+      if (button) button.disabled = true;
+
+      const action = form.getAttribute("action");
+      const ajaxUrl = action.replace(
+        "https://formsubmit.co/",
+        "https://formsubmit.co/ajax/"
+      );
+
+      const payload = {
+        message: form.message.value,
+        name:    form.name.value  || "(anonymous)",
+        email:   form.email.value || "(not provided)",
+        _subject: "Anonymous question from x-repos.github.io",
+        _captcha: "false"
+      };
+
+      fetch(ajaxUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept":       "application/json"
+        },
+        body: JSON.stringify(payload)
+      })
+        .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+        .then(function () {
+          form.reset();
+          status.className = "home-ask__status is-success";
+          status.textContent = msg(
+            "Thanks — your message landed in my inbox.",
+            "Cảm ơn — tin nhắn của bạn đã đến hộp thư của tôi."
+          );
+        })
+        .catch(function () {
+          status.className = "home-ask__status is-error";
+          status.textContent = msg(
+            "Couldn't send right now — try again, or email me directly.",
+            "Không gửi được lúc này — hãy thử lại, hoặc email cho tôi trực tiếp."
+          );
+        })
+        .then(function () {
+          if (button) button.disabled = false;
+        });
+    });
+  })();
 })();

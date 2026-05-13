@@ -314,6 +314,46 @@ title: "Hoang Anh (Benjamin) Nguyen — Quantum, HPC, AI, Planets"
       <a href="mailto:hoanganh_nguyen@mines.edu">hoanganh_nguyen@mines.edu</a>
     </p>
 
+    <!-- Anonymous Q box — submissions go to email via FormSubmit -->
+    <section class="home-ask" aria-label="Ask a question">
+      <h3 class="home-ask__title">
+        <span lang="en">Ask me anything — anonymous works.</span>
+        <span lang="vi">Hỏi tôi bất cứ điều gì — có thể ẩn danh.</span>
+      </h3>
+      <p class="home-ask__sub">
+        <span lang="en">Goes straight to my inbox. Skip the name &amp; email if you want.</span>
+        <span lang="vi">Chuyển thẳng vào hộp thư của tôi. Bỏ trống tên &amp; email nếu bạn muốn.</span>
+      </p>
+      <form id="home-ask-form" class="home-ask__form" method="POST"
+            action="https://formsubmit.co/hoanganh_nguyen@mines.edu">
+        <!-- FormSubmit config: subject, no captcha, table-style email -->
+        <input type="hidden" name="_subject" value="Anonymous question from x-repos.github.io">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="box">
+        <!-- honeypot for bots -->
+        <input type="text" name="_honey" class="home-ask__honey" tabindex="-1" autocomplete="off">
+
+        <textarea name="message" rows="4" required
+          data-ph-en="Type your question or thought…"
+          data-ph-vi="Nhập câu hỏi hoặc suy nghĩ của bạn…"></textarea>
+
+        <div class="home-ask__row">
+          <input type="text" name="name"
+            data-ph-en="Name (optional)"
+            data-ph-vi="Tên (tùy chọn)">
+          <input type="email" name="email"
+            data-ph-en="Email (optional)"
+            data-ph-vi="Email (tùy chọn)">
+        </div>
+
+        <button type="submit" class="home-ask__send">
+          <span lang="en">Send</span>
+          <span lang="vi">Gửi</span>
+        </button>
+        <p class="home-ask__status" id="home-ask-status" role="status" hidden></p>
+      </form>
+    </section>
+
     <!-- Visitor stats -->
     <div class="home-visitors" aria-label="Visitor stats">
       <p class="home-visitors__hello-line" id="home-visitor-country">
