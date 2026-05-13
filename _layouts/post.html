@@ -1,0 +1,61 @@
+---
+# Single blog post. Self-contained.
+---
+<!doctype html>
+<html lang="{{ site.locale | default: 'en' | slice: 0,2 }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | escape }} — {{ site.title | escape }}</title>
+  {% if page.excerpt %}<meta name="description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}">{% endif %}
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{ page.title | escape }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  {% if page.excerpt %}<meta property="og:description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}">{% endif %}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/images/favicon-32x32.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/images/favicon-16x16.png' | relative_url }}">
+  <meta name="theme-color" content="#03060d">
+
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+</head>
+<body class="page-body">
+
+  <nav class="site-nav" aria-label="Primary">
+    <a class="site-nav__brand" href="{{ '/' | relative_url }}">{{ site.author.name }}</a>
+    <ul class="site-nav__links">
+      <li><a href="{{ '/' | relative_url }}">Home</a></li>
+      <li><a href="https://scholar.google.com/citations?user=-f-uRoYAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a></li>
+      <li><a href="{{ '/files/HoangAnh_CV.pdf' | relative_url }}" target="_blank" rel="noopener">CV</a></li>
+      <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+    </ul>
+  </nav>
+
+  <main class="page-main" role="main">
+    <article class="post">
+      <header class="post-header">
+        <p class="page-eyebrow"><a href="{{ '/blog/' | relative_url }}">← Back to blog</a></p>
+        <h1 class="post-title">{{ page.title }}</h1>
+        <p class="post-meta">
+          <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+          {% if page.tags %} · {% for tag in page.tags %}<span class="post-list__tag">{{ tag }}</span>{% endfor %}{% endif %}
+        </p>
+      </header>
+
+      <div class="post-content">
+        {{ content }}
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>© {{ site.time | date: "%Y" }} {{ site.author.name }} · <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>
+  </footer>
+</body>
+</html>
