@@ -71,7 +71,16 @@
   document.addEventListener("DOMContentLoaded", function () {
     const flip = document.querySelector(".hero-portrait-flip");
     if (!flip) return;
+
     flip.addEventListener("click", function () {
+      // Lazy-load the back image the first time we flip. Keeping it
+      // out of the initial HTML stops social scrapers (Facebook,
+      // iMessage, etc.) from ever seeing it as a share-preview
+      // candidate — they only see the og:image.
+      const back = flip.querySelector(".hero-portrait--back");
+      if (back && back.dataset.src && back.src.startsWith("data:")) {
+        back.src = back.dataset.src;
+      }
       const pressed = flip.getAttribute("aria-pressed") === "true";
       flip.setAttribute("aria-pressed", pressed ? "false" : "true");
     });
