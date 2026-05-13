@@ -917,4 +917,35 @@
 
   // Nudge ScrollTrigger after fonts/images load (avoids miscalc)
   window.addEventListener("load", () => ScrollTrigger.refresh());
+
+  // ----------------------------------------------------------
+  // Visitor country detection (best-effort, fails gracefully)
+  // ----------------------------------------------------------
+  (function lookupVisitor() {
+    const el = document.getElementById("home-visitor-country");
+    if (!el) return;
+    const flagEl  = el.querySelector(".home-visitors__flag");
+    const helloEl = el.querySelector(".home-visitors__hello");
+
+    // Convert ISO 3166-1 alpha-2 to flag emoji
+    function flagFor(code) {
+      if (!code || code.length !== 2) return "🌍";
+      const A = 0x1F1E6;
+      return String.fromCodePoint(
+        A + code.toUpperCase().charCodeAt(0) - 65,
+        A + code.toUpperCase().charCodeAt(1) - 65
+      );
+    }
+
+    fetch("https://ipapi.co/json/", { cache: "no-store" })
+      .then(r => (r.ok ? r.json() : Promise.reject()))
+      .then(d => {
+        if (!d || !d.country_code) return;
+        const code = d.country_code;
+        const name = d.country_name || code;
+        if (flagEl)  flagEl.textContent  = flagFor(code);
+        if (helloEl) helloEl.textContent = "Hello from " + name + ".";
+      })
+      .catch(() => { /* silent fallback */ });
+  })();
 })();

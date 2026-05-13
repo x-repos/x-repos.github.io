@@ -402,6 +402,47 @@ html.home-immersive a { color: var(--home-accent); }
 }
 .home-outro__contact a { color: var(--home-fg); text-decoration: none; border-bottom: 1px solid var(--home-accent); padding-bottom: 2px; }
 
+/* ---------- Visitor stats ---------- */
+.home-visitors {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  font-size: 13px;
+  color: var(--home-muted);
+}
+.home-visitors__hello-line {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.home-visitors__flag {
+  font-size: 16px;
+  line-height: 1;
+}
+.home-visitors__hello { letter-spacing: 0.01em; }
+
+.home-visitors__flagcounter {
+  display: inline-block;
+  padding: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  line-height: 0;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+.home-visitors__flagcounter:hover {
+  border-color: rgba(143, 214, 255, 0.4);
+  box-shadow: 0 0 18px rgba(143, 214, 255, 0.15);
+  transform: translateY(-1px);
+}
+.home-visitors__flagcounter img {
+  display: block;
+  border-radius: 4px;
+}
+
 /* ---------- Reduced motion / fallback ---------- */
 @media (prefers-reduced-motion: reduce) {
   #home-canvas { display: none; }
