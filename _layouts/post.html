@@ -15,9 +15,9 @@
   <meta property="og:title" content="{{ page.title | escape }}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   {% if page.excerpt %}<meta property="og:description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}">{% endif %}
-  <meta property="og:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ '/images/presentation.jpeg' | absolute_url }}{% endif %}">
-  <meta property="og:image:width" content="1126">
-  <meta property="og:image:height" content="282">
+  <meta property="og:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ '/images/earth-og.jpg' | absolute_url }}{% endif %}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
   <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
   <meta property="article:author" content="{{ site.author.name }}">
 
@@ -25,7 +25,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ page.title | escape }}">
   {% if page.excerpt %}<meta name="twitter:description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}">{% endif %}
-  <meta name="twitter:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ '/images/presentation.jpeg' | absolute_url }}{% endif %}">
+  <meta name="twitter:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ '/images/earth-og.jpg' | absolute_url }}{% endif %}">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
