@@ -28,6 +28,10 @@ html.home-immersive body.home-body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  /* Explicitly allow vertical pan — iOS Safari sometimes guesses wrong
+     when there's a fixed WebGL canvas above the content. */
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Hide the standard masthead/footer chrome on the home page */
@@ -288,6 +292,9 @@ html[lang="vi"] [lang="en"] { display: none !important; }
   z-index: 0;
   display: block;
   background: radial-gradient(ellipse at 50% 40%, #0a1224 0%, #03060d 60%, #000 100%);
+  /* Critical for mobile: let touches pass through so the page can scroll. */
+  pointer-events: none;
+  touch-action: pan-y;
 }
 
 /* ---------- Scroll progress bar ---------- */
@@ -298,6 +305,7 @@ html[lang="vi"] [lang="en"] { display: none !important; }
   height: 2px;
   z-index: 60;
   background: rgba(255,255,255,0.05);
+  pointer-events: none;
 }
 .home-progress__bar {
   height: 100%;

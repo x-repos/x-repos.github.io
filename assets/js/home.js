@@ -582,14 +582,15 @@
   // ====================================================
   // SCROLL TIMELINE — one master timeline scrubbed by ScrollTrigger
   // ====================================================
+  // On mobile, a high scrub value feels like the page is "sticky" or
+  // resisting touch drag — drop it down so finger flicks feel responsive.
+  const isMobile = window.matchMedia("(max-width: 720px)").matches;
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: "#home-main",
       start: "top top",
       end: "bottom bottom",
-      // Higher scrub = more inertia between scroll position and animation,
-      // so cross-fades feel smooth instead of snapping.
-      scrub: 1.4,
+      scrub: isMobile ? 0.6 : 1.4,
     },
   });
 
