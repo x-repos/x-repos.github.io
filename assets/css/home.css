@@ -80,7 +80,10 @@ html.home-immersive a { color: var(--home-accent); }
   border-left: 1px solid rgba(255, 255, 255, 0.18);
 }
 @media (max-width: 720px) {
-  .brand-name { display: none; }
+  /* Keep "π · Name" visible on small screens; just trim sizes so they fit. */
+  .brand-pi   { font-size: 30px; }
+  .brand-name { font-size: 13px; padding-left: 10px; }
+  .home-topnav__brand { gap: 10px; }
 }
 
 /* π logo mark — used in top-left of every page */
