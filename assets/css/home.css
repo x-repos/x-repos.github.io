@@ -57,7 +57,7 @@ html.home-immersive a { color: var(--home-accent); }
   letter-spacing: 0.02em;
 }
 /* Push primary nav + hamburger to the right edge */
-.home-topnav__primary { margin-left: auto; }
+/* (margin-left:auto is set inside .home-topnav__primary itself below) */
 .home-topnav .nav-toggle { margin-left: 16px; }
 .home-topnav__brand {
   color: var(--home-fg) !important;
@@ -103,11 +103,11 @@ html.home-immersive a { color: var(--home-accent); }
   transform: scale(1.08) rotate(-3deg);
   filter: drop-shadow(0 2px 6px rgba(143, 214, 255, 0.5));
 }
-/* Primary inline links: Scholar, CV, Blog */
+/* Primary inline links: Scholar, CV, Blog — pushed to the right edge */
 .home-topnav__primary {
   display: flex;
   gap: 22px;
-  margin: 0;
+  margin: 0 0 0 auto;   /* margin-left: auto pushes to the right */
   padding: 0;
   list-style: none;
 }
@@ -470,7 +470,18 @@ html.home-immersive a { color: var(--home-accent); }
   text-transform: uppercase;
   letter-spacing: 0.18em;
 }
-@media (max-width: 720px) { .home-scale { display: none; } }
+/* Compact scale ruler on phones — smaller rail, smaller label */
+@media (max-width: 720px) {
+  .home-scale {
+    right: 10px;
+    gap: 6px;
+    font-size: 10px;
+  }
+  .home-scale__rail   { width: 2px; height: 180px; }
+  .home-scale__dot    { width: 9px;  height: 9px; right: -4px; }
+  .home-scale__label  { font-size: 13px; }
+  .home-scale__caption { font-size: 9px; letter-spacing: 0.14em; }
+}
 
 /* ---------- Outro / about ---------- */
 .home-outro__grid {

@@ -50,8 +50,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   font-size: 14px;
   letter-spacing: 0.02em;
 }
-/* Push primary nav + hamburger to the right edge */
-.site-nav__primary { margin-left: auto; }
+/* (margin-left:auto is set inside .site-nav__primary itself below) */
 .site-nav .nav-toggle { margin-left: 16px; }
 .site-nav__brand {
   color: var(--fg) !important;
@@ -95,11 +94,11 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   transform: scale(1.08) rotate(-3deg);
   filter: drop-shadow(0 2px 6px rgba(143, 214, 255, 0.5));
 }
-/* Primary inline links */
+/* Primary inline links — pushed to the right edge */
 .site-nav__primary {
   display: flex;
   gap: 22px;
-  margin: 0;
+  margin: 0 0 0 auto;   /* margin-left: auto pushes to the right */
   padding: 0;
   list-style: none;
 }
