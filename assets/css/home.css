@@ -615,6 +615,9 @@ html[lang="vi"] [lang="en"] { display: none !important; }
 .home-ask__form textarea,
 .home-ask__form input[type="text"],
 .home-ask__form input[type="email"] {
+  /* border-box so width:100% includes the padding — otherwise the
+     inputs overflow the card on narrow screens. */
+  box-sizing: border-box;
   width: 100%;
   background: rgba(0, 0, 0, 0.45);
   border: 1px solid rgba(255, 255, 255, 0.12);
