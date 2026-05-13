@@ -32,25 +32,25 @@
       <span class="brand-pi">π</span>
       <span class="brand-name">{{ site.author.name }}</span>
     </a>
+    <ul class="site-nav__primary">
+      <li><a href="{{ '/' | relative_url }}">Home</a></li>
+      <li><a href="https://scholar.google.com/citations?user=-f-uRoYAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a></li>
+      <li><a href="{{ '/files/HoangAnh_CV.pdf' | relative_url }}" target="_blank" rel="noopener">CV</a></li>
+      <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+    </ul>
     <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
       <span class="nav-toggle__bar"></span>
       <span class="nav-toggle__bar"></span>
       <span class="nav-toggle__bar"></span>
     </button>
-    <ul class="site-nav__links">
-      <li><a href="{{ '/' | relative_url }}">Home</a></li>
-      <li><a href="https://scholar.google.com/citations?user=-f-uRoYAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a></li>
-      <li><a href="{{ '/files/HoangAnh_CV.pdf' | relative_url }}" target="_blank" rel="noopener">CV</a></li>
-      <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
-      <li class="nav-social">
-        <a href="{{ site.author.facebook | default: '#' }}" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
-          <svg class="nav-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82V14.706h-3.13v-3.622h3.13V8.413c0-3.1 1.894-4.788 4.66-4.788 1.325 0 2.464.099 2.794.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622H17.56V24h5.115c.732 0 1.325-.593 1.325-1.324V1.325C24 .593 23.407 0 22.675 0z"/></svg>
-        </a>
-        <a href="{{ site.author.linkedin | default: '#' }}" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
-          <svg class="nav-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
-        </a>
-      </li>
-    </ul>
+    <div class="site-nav__dropdown">
+      <a class="nav-social-link" href="{{ site.author.facebook | default: '#' }}" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+        <svg class="nav-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82V14.706h-3.13v-3.622h3.13V8.413c0-3.1 1.894-4.788 4.66-4.788 1.325 0 2.464.099 2.794.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622H17.56V24h5.115c.732 0 1.325-.593 1.325-1.324V1.325C24 .593 23.407 0 22.675 0z"/></svg>
+      </a>
+      <a class="nav-social-link" href="{{ site.author.linkedin | default: '#' }}" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+        <svg class="nav-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+      </a>
+    </div>
   </nav>
 
   <main class="page-main" role="main">
