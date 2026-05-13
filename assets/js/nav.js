@@ -291,14 +291,15 @@
         </h2>
         <p class="omni-body">
           <span lang="en">
-            “Ben 10” comes from the Cartoon Network show — <em>Ben Tennyson</em> and
-            his <em>Omnitrix</em>, a watch that lets him transform into ten different
-            aliens. I watched a lot of it. It stuck.
+            “Ben” comes from the Cartoon Network show <em>Ben 10</em> —
+            <em>Ben Tennyson</em> and his <em>Omnitrix</em>, a watch that lets him
+            transform into ten different aliens. I watched a lot of it. It stuck.
           </span>
           <span lang="vi">
-            “Ben 10” đến từ bộ phim hoạt hình của Cartoon Network — <em>Ben Tennyson</em>
-            và chiếc <em>Omnitrix</em>, đồng hồ giúp cậu ấy biến thành mười người
-            ngoài hành tinh khác nhau. Tôi xem nhiều lắm. Nó dính lại với tôi.
+            “Ben” đến từ bộ phim hoạt hình <em>Ben 10</em> của Cartoon Network —
+            <em>Ben Tennyson</em> và chiếc <em>Omnitrix</em>, đồng hồ giúp cậu ấy
+            biến thành mười người ngoài hành tinh khác nhau. Tôi xem nhiều lắm.
+            Nó dính lại với tôi.
           </span>
         </p>
         <p class="omni-real">
