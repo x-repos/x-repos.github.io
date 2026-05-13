@@ -269,16 +269,16 @@ html.home-immersive a { color: var(--home-accent); }
 /* ---------- Scale indicator (powers of 10 ruler) ---------- */
 .home-scale {
   position: fixed;
-  right: 18px;
+  right: 26px;
   top: 50%;
   transform: translateY(-50%);
   z-index: 40;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 6px;
+  gap: 10px;
   font-family: var(--home-ui);
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: 0.08em;
   color: var(--home-muted);
   pointer-events: none;
@@ -286,19 +286,19 @@ html.home-immersive a { color: var(--home-accent); }
 }
 .home-scale__rail {
   position: relative;
-  width: 2px;
-  height: 220px;
-  background: rgba(255,255,255,0.08);
-  border-radius: 1px;
+  width: 3px;
+  height: 320px;
+  background: rgba(255,255,255,0.10);
+  border-radius: 2px;
   overflow: visible;
 }
 .home-scale__dot {
   position: absolute;
-  right: -3px;
-  width: 8px; height: 8px;
+  right: -5px;
+  width: 13px; height: 13px;
   border-radius: 50%;
   background: var(--home-accent);
-  box-shadow: 0 0 12px var(--home-accent);
+  box-shadow: 0 0 18px var(--home-accent);
   transform: translateY(-50%);
   transition: top 0.15s linear, background 0.3s ease, box-shadow 0.3s ease;
   top: 0%;
@@ -307,10 +307,11 @@ html.home-immersive a { color: var(--home-accent); }
   font-variant-numeric: tabular-nums;
   color: var(--home-fg);
   font-weight: 500;
+  font-size: 17px;
 }
 .home-scale__caption {
-  opacity: 0.6;
-  font-size: 10px;
+  opacity: 0.65;
+  font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.18em;
 }

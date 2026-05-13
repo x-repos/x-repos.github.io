@@ -587,51 +587,59 @@
       trigger: "#home-main",
       start: "top top",
       end: "bottom bottom",
-      scrub: 0.6, // smooth easing while scrubbing — feels like video
+      // Higher scrub = more inertia between scroll position and animation,
+      // so cross-fades feel smooth instead of snapping.
+      scrub: 1.4,
     },
   });
 
   // Narrative: Qubits -> DFT -> MD atoms -> Mantle -> Earth -> Cosmos
   // Each "unit" of the timeline ~= one scroll viewport.
 
+  // Transitions are tuned so each scene's fade-out *overlaps* the next
+  // scene's fade-in (both run ~0.9 in length, starting from the same
+  // anchor), giving a real crossfade instead of a hand-off. Camera Z
+  // changes are anchored slightly before the opacity shift so the move
+  // begins while the previous scene is still partly visible.
+
   // Scene 1 (Qubits): hold at full intensity, gentle camera drift
-  tl.to(state, { quantumRot: 0.2, cameraZ: 6.5, duration: 1, ease: "power1.inOut" }, 0);
+  tl.to(state, { quantumRot: 0.2, cameraZ: 6.5, duration: 1.0, ease: "power1.inOut" }, 0);
 
   // Scene 1 -> 2: fade qubits, bring DFT cloud + nucleus
-  tl.to(state, { quantumOpacity: 0.0, quantumActivity: 0.0, duration: 0.6, ease: "power2.in" }, 1.0)
-    .to(state, { dftOpacity: 1.0, duration: 0.7, ease: "power2.out" }, 1.0)
-    .to(state, { dftShape: 1.0, dftRot: 0.8, duration: 1.2, ease: "sine.inOut" }, 1.1);
+  tl.to(state, { quantumOpacity: 0.0, quantumActivity: 0.0, duration: 0.9, ease: "sine.inOut" }, 0.9)
+    .to(state, { dftOpacity: 1.0, duration: 0.9, ease: "sine.inOut" }, 0.9)
+    .to(state, { dftShape: 1.0, dftRot: 0.8, duration: 1.4, ease: "sine.inOut" }, 1.0);
 
   // Scene 2 -> 3: fade DFT, atoms appear scattered then bond
-  tl.to(state, { dftOpacity: 0.0, duration: 0.5, ease: "power2.in" }, 2.2)
-    .to(state, { atomsOpacity: 1.0, duration: 0.6, ease: "power2.out" }, 2.2)
-    .to(state, { cameraZ: 5.4, duration: 0.8, ease: "power1.inOut" }, 2.2)
-    .to(state, { atomsCompactness: 1.0, atomsRot: 0.6, duration: 1.2, ease: "power2.inOut" }, 2.4);
+  tl.to(state, { dftOpacity: 0.0, duration: 0.9, ease: "sine.inOut" }, 2.1)
+    .to(state, { atomsOpacity: 1.0, duration: 0.9, ease: "sine.inOut" }, 2.1)
+    .to(state, { cameraZ: 5.4, duration: 1.1, ease: "power1.inOut" }, 2.0)
+    .to(state, { atomsCompactness: 1.0, atomsRot: 0.6, duration: 1.4, ease: "power2.inOut" }, 2.3);
 
   // Scene 3 -> 4: atoms fade, mantle plumes rise (heat building)
-  tl.to(state, { atomsOpacity: 0.0, duration: 0.5, ease: "power2.in" }, 3.4)
-    .to(state, { mantleOpacity: 1.0, duration: 0.6, ease: "power2.out" }, 3.4)
-    .to(state, { cameraZ: 6.5, duration: 1.0, ease: "power1.inOut" }, 3.4);
+  tl.to(state, { atomsOpacity: 0.0, duration: 0.9, ease: "sine.inOut" }, 3.3)
+    .to(state, { mantleOpacity: 1.0, duration: 0.9, ease: "sine.inOut" }, 3.3)
+    .to(state, { cameraZ: 6.5, duration: 1.2, ease: "power1.inOut" }, 3.2);
 
   // Scene 4 -> 5: fade mantle, Earth emerges large + hot, then cools and shrinks
-  tl.to(state, { mantleOpacity: 0.0, duration: 0.6, ease: "power2.out" }, 4.4)
-    .to(state, { earthOpacity: 1.0, duration: 0.6, ease: "power2.out" }, 4.4)
-    .to(state, { earthScale: 1.2, heat: 0.0, duration: 1.2, ease: "power2.inOut" }, 4.5)
-    .to(state, { wavePhase: 1.0, duration: 0.8, ease: "power2.in" }, 5.0);
+  tl.to(state, { mantleOpacity: 0.0, duration: 0.9, ease: "sine.inOut" }, 4.3)
+    .to(state, { earthOpacity: 1.0, duration: 0.9, ease: "sine.inOut" }, 4.3)
+    .to(state, { earthScale: 1.2, heat: 0.0, duration: 1.4, ease: "power2.inOut" }, 4.4)
+    .to(state, { wavePhase: 1.0, duration: 0.9, ease: "power2.in" }, 4.9);
 
-  // Scene 5 -> 6 (Solar): Earth shrinks to a tiny dot, solar system fades in around the sun
-  tl.to(state, { earthOpacity: 0.0, earthScale: 0.0, duration: 0.8, ease: "power2.in" }, 5.6)
-    .to(state, { solarOpacity: 1.0, duration: 0.8, ease: "power2.out" }, 5.6)
-    .to(state, { cameraZ: 8.0, duration: 1.0, ease: "power1.inOut" }, 5.6);
+  // Scene 5 -> 6 (Solar): Earth shrinks to a tiny dot, solar system fades in
+  tl.to(state, { earthOpacity: 0.0, earthScale: 0.0, duration: 0.9, ease: "sine.inOut" }, 5.5)
+    .to(state, { solarOpacity: 1.0, duration: 0.9, ease: "sine.inOut" }, 5.5)
+    .to(state, { cameraZ: 8.0, duration: 1.2, ease: "power1.inOut" }, 5.4);
 
   // Scene 6 -> 7 (Galaxy): solar shrinks to a glowing core, galaxy reveals
-  tl.to(state, { solarOpacity: 0.0, solarScale: 0.05, duration: 0.8, ease: "power2.in" }, 6.6)
-    .to(state, { galaxyOpacity: 1.0, duration: 0.9, ease: "power2.out" }, 6.6)
-    .to(state, { cameraZ: 9.5, duration: 1.0, ease: "power1.inOut" }, 6.6);
+  tl.to(state, { solarOpacity: 0.0, solarScale: 0.05, duration: 0.9, ease: "sine.inOut" }, 6.5)
+    .to(state, { galaxyOpacity: 1.0, duration: 0.9, ease: "sine.inOut" }, 6.5)
+    .to(state, { cameraZ: 9.5, duration: 1.2, ease: "power1.inOut" }, 6.4);
 
-  // Scene 7 -> 8 (Outro): galaxy recedes, stars dominate, ready for about/contact
-  tl.to(state, { galaxyScale: 0.45, duration: 1.2, ease: "power2.inOut" }, 7.6)
-    .to(state, { starOpacity: 1.0, starRotation: 0.1, duration: 1.2, ease: "power2.out" }, 7.6);
+  // Scene 7 -> 8 (Outro): galaxy recedes, stars dominate
+  tl.to(state, { galaxyScale: 0.45, duration: 1.4, ease: "power2.inOut" }, 7.5)
+    .to(state, { starOpacity: 1.0, starRotation: 0.1, duration: 1.4, ease: "power2.out" }, 7.5);
 
   // Always-on: progress bar + scale ruler
   const progressBar = document.querySelector(".home-progress__bar");
