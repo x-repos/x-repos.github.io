@@ -920,13 +920,16 @@
   window.addEventListener("load", () => ScrollTrigger.refresh());
 
   // ----------------------------------------------------------
-  // Visitor country detection (best-effort, fails gracefully)
+  // Visitor country detection (best-effort, fails gracefully).
+  // Hello line localizes between EN ("Hello from X.") and VI
+  // ("Xin chào từ X."), and re-renders when the user toggles lang.
   // ----------------------------------------------------------
   (function lookupVisitor() {
     const el = document.getElementById("home-visitor-country");
     if (!el) return;
     const flagEl  = el.querySelector(".home-visitors__flag");
     const helloEl = el.querySelector(".home-visitors__hello");
+    if (!helloEl) return;
 
     // Convert ISO 3166-1 alpha-2 to flag emoji
     function flagFor(code) {
@@ -938,15 +941,33 @@
       );
     }
 
+    let detected = null; // { code, name } once we get a response
+
+    function render() {
+      const lang = document.documentElement.getAttribute("lang") || "en";
+      if (!detected) {
+        // Keep the static greeting spans from HTML — they handle the
+        // pre-detection state in both languages.
+        return;
+      }
+      const greet =
+        lang === "vi" ? "Xin chào từ " + detected.name + "." :
+                        "Hello from "  + detected.name + ".";
+      // Replace any existing children with a single localized text node,
+      // so the static EN/VI <span> placeholders get overwritten.
+      helloEl.textContent = greet;
+    }
+
     fetch("https://ipapi.co/json/", { cache: "no-store" })
       .then(r => (r.ok ? r.json() : Promise.reject()))
       .then(d => {
         if (!d || !d.country_code) return;
-        const code = d.country_code;
-        const name = d.country_name || code;
-        if (flagEl)  flagEl.textContent  = flagFor(code);
-        if (helloEl) helloEl.textContent = "Hello from " + name + ".";
+        detected = { code: d.country_code, name: d.country_name || d.country_code };
+        if (flagEl) flagEl.textContent = flagFor(detected.code);
+        render();
       })
-      .catch(() => { /* silent fallback */ });
+      .catch(() => { /* silent fallback — static greeting stays visible */ });
+
+    document.addEventListener("site:langchange", render);
   })();
 })();

@@ -213,6 +213,10 @@
     @media (prefers-reduced-motion: reduce) {
       .stars, .stars::before, .lost-star { animation: none; }
     }
+
+    /* Language toggle (no UI on 404, but honor the saved choice) */
+    html[lang="en"] [lang="vi"],
+    html[lang="vi"] [lang="en"] { display: none !important; }
   </style>
 </head>
 <body>
@@ -223,19 +227,35 @@
     <a class="lost__brand" href="{{ '/' | relative_url }}" aria-label="Home — Hoang Anh Nguyen">π</a>
 
     <h1 class="lost__code">404</h1>
-    <p class="lost__title">Lost in interstellar space.</p>
+    <p class="lost__title">
+      <span lang="en">Lost in interstellar space.</span>
+      <span lang="vi">Lạc trong không gian liên sao.</span>
+    </p>
     <p class="lost__body">
-      The page you were looking for drifted into a part of the universe we can't
-      reach from here. Either the URL is wrong, or it was here once and isn't
-      anymore — entropy, you know how it goes.
+      <span lang="en">
+        The page you were looking for drifted into a part of the universe we can't
+        reach from here. Either the URL is wrong, or it was here once and isn't
+        anymore — entropy, you know how it goes.
+      </span>
+      <span lang="vi">
+        Trang bạn đang tìm đã trôi đến một phần của vũ trụ mà ta không với tới
+        được từ đây. Có thể URL sai, hoặc nó từng ở đây và giờ thì không —
+        entropy, bạn biết rồi đấy.
+      </span>
     </p>
 
     <a class="lost__cta" href="{{ '/' | relative_url }}">
       <span class="lost__cta-arrow">←</span>
-      <span>Back to Earth</span>
+      <span>
+        <span lang="en">Back to Earth</span>
+        <span lang="vi">Quay lại Trái Đất</span>
+      </span>
     </a>
 
-    <p class="lost__footer">Scale · 0&nbsp;m</p>
+    <p class="lost__footer">
+      <span lang="en">Scale · 0&nbsp;m</span>
+      <span lang="vi">Thang đo · 0&nbsp;m</span>
+    </p>
   </main>
 </body>
 </html>

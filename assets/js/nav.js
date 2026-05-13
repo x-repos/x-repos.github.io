@@ -1,3 +1,41 @@
+/* ============================================================
+   Language toggle — EN / VI, persisted in localStorage.
+   Runs immediately (not on DOMContentLoaded) so the right language
+   is applied before the first paint, avoiding a flash.
+   ============================================================ */
+(function () {
+  const KEY = "site-lang";
+  function applyLang(lang) {
+    if (lang !== "en" && lang !== "vi") lang = "en";
+    document.documentElement.setAttribute("lang", lang);
+    try { localStorage.setItem(KEY, lang); } catch (e) { /* ignore */ }
+    document.querySelectorAll(".lang-switch__btn").forEach(function (btn) {
+      const isActive = btn.getAttribute("data-lang") === lang;
+      btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+    document.dispatchEvent(new CustomEvent("site:langchange", { detail: lang }));
+  }
+  // Apply ASAP (before DOM ready) — but only if the <html> attribute exists.
+  try {
+    const saved = localStorage.getItem(KEY);
+    if (saved === "en" || saved === "vi") {
+      document.documentElement.setAttribute("lang", saved);
+    }
+  } catch (e) { /* ignore */ }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    let saved = "en";
+    try { saved = localStorage.getItem(KEY) || "en"; } catch (e) { /* ignore */ }
+    applyLang(saved);
+    document.querySelectorAll(".lang-switch__btn").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        applyLang(btn.getAttribute("data-lang"));
+      });
+    });
+  });
+})();
+
 /* Tiny hamburger-menu toggle shared across all layouts. */
 (function () {
   document.addEventListener("DOMContentLoaded", function () {

@@ -161,6 +161,44 @@ html.home-immersive a { color: var(--home-accent); }
   transform: translateY(-1px);
 }
 .nav-icon { display: block; }
+
+/* ---------- Language toggle ---------- */
+/* Hide whichever language doesn't match the <html lang> attribute */
+html[lang="en"] [lang="vi"],
+html[lang="vi"] [lang="en"] { display: none !important; }
+
+.lang-switch__divider {
+  width: 1px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.18);
+  display: inline-block;
+}
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-family: var(--home-ui);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+.lang-switch__btn {
+  background: transparent;
+  border: 0;
+  padding: 4px 8px;
+  cursor: pointer;
+  color: var(--home-muted);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: inherit;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+.lang-switch__btn:hover { color: var(--home-fg); }
+.lang-switch__btn[aria-pressed="true"] {
+  color: var(--home-fg);
+  background: rgba(143, 214, 255, 0.15);
+}
 /* Hamburger button (≡ → ✕) — visible at all widths */
 .nav-toggle {
   display: flex;
